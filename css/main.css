@@ -1,34 +1,109 @@
+html {
+    height: 100%;
+}
 body {
-	background-color: #7ffdff;
-	min-width: 1200px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background: #2b5b84;
 }
 .thumbnail {
-    width: 320px;
-    height: 240px;
+    width: 250px;
+    height: 200px;
 }
-
+.image-box{
+	align:center;
+}
 .image {
-    width: 100%;
-    height: 100%;    
+	float: left;
+	padding: 1.2%;
 }
-
 .image img {
     -webkit-transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */
     -ms-transition: all 1s ease; /* IE 9 */
     -o-transition: all 1s ease; /* Opera */
     transition: all 1s ease;
+	border: 2px solid #000;
+	border-radius: 25px;   
+	-webkit-box-shadow: 1px 1px 1px 1px gray;
+	-moz-box-shadow: 1px 1px 1px 1px gray;
+	box-shadow: 1px 1px 1px 1px gray;
 }
-
 .image:hover img {
     -webkit-transform:scale(1.25); /* Safari and Chrome */
     -moz-transform:scale(1.25); /* Firefox */
     -ms-transform:scale(1.25); /* IE 9 */
     -o-transform:scale(1.25); /* Opera */
      transform:scale(1.25);
-)
-.face {
-	float: left; 
-	height: 80px;
-	width: 80px;
 }
+.card-container{
+	perspective: 700;
+	float: left;
+}
+.card{
+	position: relative;
+	margin: 40px;
+	line-height: 200px;
+	width: 300px;
+	height: 200px;
+	transition: all 0.6s ease;
+	transform-style: preserve-3d;
+}
+.front, .back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 200px;
+	backface-visibility: hidden;
+}
+.back{
+	transform: rotateY(180deg);
+}
+.card:hover{
+	transform: rotateY(180deg);
+}
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 48px;
+	text-align:center;
+	padding-top: 30px;
+	padding-left: 5px;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+h3{
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 32px;
+	text-align:center;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+p{
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 16px;
+}
+.white-knight{
+	color: white;
+	text-shadow: 1px 1px black;
+}
+.tip-container{
+	padding-bottom: 50px;
+}
+.white-box{
+	background-color: white;
+	border: 2px solid #F5F5F5;
+	border-radius: 3px;   
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+
