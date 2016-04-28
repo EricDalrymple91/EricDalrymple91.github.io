@@ -13,6 +13,7 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	background: #2b5b84;
+	padding-bottom: 70px;
 }
 .thumbnail {
     width: 250px;
@@ -72,7 +73,7 @@ body {
 	transform: rotateY(180deg);
 }
 h1{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 48px;
 	text-align:center;
 	padding-top: 30px;
@@ -81,29 +82,70 @@ h1{
 	text-shadow: 2px 2px black;
 }
 h3{
-	font-family: 'Open Sans', sans-serif; 
+	font-family: 'Roboto', sans-serif;
 	font-size: 32px;
 	text-align:center;
 	color: white;
 	text-shadow: 2px 2px black;
 }
+h5{
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	text-align:center;
+	color: white;
+	text-shadow: 2px 2px black;
+}
 p{
-	font-family: 'Open Sans', sans-serif; 
+	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+}
+.about{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	text-shadow: 2px 2px black;
+	color: white;
+	margin-bottom: 20px;
 }
 .white-knight{
 	color: white;
 	text-shadow: 1px 1px black;
 }
+.section-container{
+	padding-bottom: 30px;
+}
 .tip-container{
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 .white-box{
 	background-color: white;
 	border: 2px solid #F5F5F5;
 	border-radius: 3px;   
 	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 	padding: 5px;
+	box-shadow: 2px 2px 2px black;
 }
-
+a {
+	color: #2b5b84;
+}
+.script-container{
+	box-shadow: 2px 2px 2px black;
+}
+.footer {
+	background:#101010;
+	height: 40px;
+	margin-top: -40px;
+}
+.foot{
+	color: #9d9d9d;
+	text-align: center;
+	padding-top: 20px;
+}
+.foot:hover{
+	color: white;
+	text-decoration: none;
+}
+.pylogo{
+	width: 70px;
+	height: 70px;
+}
