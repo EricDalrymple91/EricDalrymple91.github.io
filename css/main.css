@@ -15,18 +15,22 @@ body {
 	background: #2b5b84;
 	padding-bottom: 70px;
 }
+
 .thumbnail {
     width: 250px;
     height: 200px;
 }
-.image-box{
-	align:center;
+
+.fp-image-box {
+	text-align: center;
 }
-.image {
+
+.fp-image {
 	float: left;
 	padding: 1.2%;
 }
-.image img {
+
+.fp-image img {
     -webkit-transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */
     -ms-transition: all 1s ease; /* IE 9 */
@@ -34,22 +38,24 @@ body {
     transition: all 1s ease;
 	border: 2px solid #000;
 	border-radius: 25px;   
-	-webkit-box-shadow: 1px 1px 1px 1px gray;
-	-moz-box-shadow: 1px 1px 1px 1px gray;
-	box-shadow: 1px 1px 1px 1px gray;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
+	-moz-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
 }
-.image:hover img {
-    -webkit-transform:scale(1.25); /* Safari and Chrome */
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* IE 9 */
-    -o-transform:scale(1.25); /* Opera */
-     transform:scale(1.25);
+.fp-image:hover img {
+    -webkit-transform:scale(1.1); /* Safari and Chrome */
+    -moz-transform:scale(1.1); /* Firefox */
+    -ms-transform:scale(1.1); /* IE 9 */
+    -o-transform:scale(1.1); /* Opera */
+     transform:scale(1.1);
 }
+
 .card-container{
 	perspective: 700;
 	float: left;
 }
-.card{
+
+.card {
 	position: relative;
 	margin: 40px;
 	line-height: 200px;
@@ -58,6 +64,7 @@ body {
 	transition: all 0.6s ease;
 	transform-style: preserve-3d;
 }
+
 .front, .back{
 	position: absolute;
 	top: 0;
@@ -66,13 +73,16 @@ body {
 	height: 200px;
 	backface-visibility: hidden;
 }
+
 .back{
 	transform: rotateY(180deg);
 }
+
 .card:hover{
 	transform: rotateY(180deg);
 }
-h1{
+
+h1 {
 	font-family: 'Roboto', sans-serif;
 	font-size: 48px;
 	text-align:center;
@@ -81,41 +91,48 @@ h1{
 	color: white;
 	text-shadow: 2px 2px black;
 }
-h3{
+
+h3 {
 	font-family: 'Roboto', sans-serif;
 	font-size: 32px;
 	text-align:center;
 	color: white;
 	text-shadow: 2px 2px black;
 }
-h5{
+h5 {
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
 	text-align:center;
 	color: white;
 	text-shadow: 2px 2px black;
 }
-p{
+
+p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 }
-.about{
+
+.about {
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;
 	text-shadow: 2px 2px black;
 	color: white;
 	margin-bottom: 20px;
 }
+
 .white-knight{
 	color: white;
 	text-shadow: 1px 1px black;
 }
+
 .section-container{
-	padding-bottom: 30px;
+	padding-bottom: 15px;
 }
+
 .tip-container{
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
+
 .white-box{
 	background-color: white;
 	border: 2px solid #F5F5F5;
@@ -125,27 +142,82 @@ p{
 	padding: 5px;
 	box-shadow: 2px 2px 2px black;
 }
+
 a {
 	color: #2b5b84;
 }
+
 .script-container{
 	box-shadow: 2px 2px 2px black;
 }
+
 .footer {
 	background:#101010;
 	height: 40px;
-	margin-top: -40px;
+	padding-top: 10px;
 }
-.foot{
+
+.foot {
 	color: #9d9d9d;
 	text-align: center;
 	padding-top: 20px;
 }
+
 .foot:hover{
 	color: white;
 	text-decoration: none;
 }
+
 .pylogo{
 	width: 70px;
 	height: 70px;
+}
+
+/* Sacnasty Draft */
+.sacnasty-main-div {
+	padding-top: 10px;
+}
+
+.sacnasty-simulate-div {
+	align-content: center;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.sacnasty-draft-btn {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	border-radius: 5px;
+	color: white;
+	background-color: #c19a6b;
+}
+
+.sacnasty-draft-btn:hover {
+	background-color: #6b563b;
+}
+
+.sacnasty-draft-btn:active {
+  	transform: translateY(4px);
+}
+
+.sacnasty-ball-div {
+	align-content: center;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+}
+
+.sacnasty-ball {
+	margin: auto;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+.sacnasty-ball-text {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	padding-top: 40px;
 }
