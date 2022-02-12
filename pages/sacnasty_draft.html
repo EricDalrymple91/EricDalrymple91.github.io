@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Header -->
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../css/main.css">
+        <title>About Me</title>
+        <link rel="icon" href="../images/e.png">
+    </head>
+
+    <!-- Body -->
+    <body>
+
+    	<!-- Navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">Eric</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="about.html">About Me <span class="sr-only">(current)</span><span class="glyphicon glyphicon-user"></span></a></li>
+                <li><a href="pythontips.html">Python Tips <span class="glyphicon glyphicon-sunglasses"></span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://oregontech.maps.arcgis.com/home/index.html" target="_blank">ArcGIS Online</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://www.duolingo.com/edalrymple" target="_blank">Duolingo</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://www.codecademy.com/TheMadTitan91" target="_blank">Code Academy</a></li>
+                    <li><a href="http://stackoverflow.com/users/6124714/ejd91" target="_blank">Stack Overflow</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="contact.html">Contact Me <span class="glyphicon glyphicon-send"></span></a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="sacnasty-main-div">
+            <h1>2022 SacNasty Fantasy Football Draft</h1>
+
+            <!-- Simulate Balls -->
+            <div class="sacnasty-simulate-div">
+                <button class="sacnasty-draft-btn" onclick="draftLottery()">Draft</button>
+            </div>
+
+            <!-- Ball Output -->
+            <div class="sacnasty-ball-div" id="sacnasty-ball-div">
+                <!-- Pick 6 -->
+                <div id="pick6">
+                    <div class="sacnasty-ball" id="sacnasty-ball-6">
+                        <div class="sacnasty-ball-text" onclick="revealPick(6)">
+                            <p id="pick6text">Pick #6</p>
+                            <p id="pick6texthidden" style="display: none"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pick 5 -->
+                <div id="pick5">
+                    <div class="sacnasty-ball" id="sacnasty-ball-5">
+                        <div class="sacnasty-ball-text" onclick="revealPick(5)">
+                            <p id="pick5text">Pick #5</p>
+                            <p id="pick5texthidden" style="display: none"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pick 4 -->
+                <div id="pick4">
+                    <div class="sacnasty-ball" id="sacnasty-ball-4">
+                        <div class="sacnasty-ball-text" onclick="revealPick(4)">
+                            <p id="pick4text">Pick #4</p>
+                            <p id="pick4texthidden" style="display: none"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pick 3 -->
+                <div id="pick3">
+                    <div class="sacnasty-ball" id="sacnasty-ball-3">
+                        <div class="sacnasty-ball-text" onclick="revealPick(3)">
+                            <p id="pick3text">Pick #3</p>
+                            <p id="pick3texthidden" style="display: none"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pick 2 -->
+                <div id="pick2">
+                    <div class="sacnasty-ball" id="sacnasty-ball-2">
+                        <div class="sacnasty-ball-text" onclick="revealPick(2)">
+                            <p id="pick2text">Pick #2</p>
+                            <p id="pick2texthidden" style="display: none"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pick 1 -->
+                <div id="pick1">
+                    <div class="sacnasty-ball" id="sacnasty-ball-1">
+                        <div class="sacnasty-ball-text" onclick="revealPick(1)">
+                            <p id="pick1text">Pick #1</p>
+                            <p id="pick1texthidden" style="display: none"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    <script src="../js/sacnasty.js"></script>
+</html>

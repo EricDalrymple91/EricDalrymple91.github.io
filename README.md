@@ -1,4 +1,4 @@
-My personal website
+My personal Website
 ==================
-[My website](http://ericjdalrymple.com/) is a portal website for things I am involved with!
+[My Website](http://ericjdalrymple.com/) is a place to gather.
 
