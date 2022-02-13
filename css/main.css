@@ -13,7 +13,7 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	background: #2b5b84;
-	padding-bottom: 70px;
+	padding-bottom: 0px;
 }
 
 .thumbnail {
@@ -221,3 +221,71 @@ a {
 	font-size: 18px;
 	padding-top: 40px;
 }
+
+/* Sacnasty Pie */
+.sacnasty-pie-div {
+	width: 100%;
+}
+
+.sacnasty-pie-div-chart {
+	height: 40vh;
+	width: 40vw;
+	margin: auto;
+}
+
+/* Paralaxed */
+.p-wrapper {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	perspective: 10px;
+	background: none;
+	margin-left: -5px;
+}
+
+.p-header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	transform-style: preserve-3d;
+	z-index: -1;
+}
+
+.p-title {
+	font-size: 7rem;
+	color: white;
+	text-shadow: 0 0 5px black;
+}
+
+.p-section {
+	font-size: 2rem;
+	padding: 2rem;
+	background-color: #333;
+	color: white;
+}
+
+.p-background {
+	transform: translateZ(-10px) scale(2);
+}
+
+.p-foreground {
+	transform: translateZ(-5px) scale(1.5);
+	height: 100px;
+	width: 100px;
+}
+
+.p-foreground-d {
+
+}
+
+.p-background,
+.p-foreground {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
