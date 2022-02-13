@@ -79,3 +79,4 @@ const revealPick = (pickNumber) => {
     ball.style.backgroundColor = colors[pickNumber];
     text.innerHTML = document.getElementById(`pick${pickNumber}texthidden`).innerHTML;
 }
+
