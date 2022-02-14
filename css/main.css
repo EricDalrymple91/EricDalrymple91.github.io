@@ -214,12 +214,14 @@ a {
 	border-radius: 50%;
 	background-color: white;
 	margin-bottom: 10px;
+	box-shadow: 0 0 0 2px dimgrey;
 }
 
 .sacnasty-ball-text {
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	padding-top: 40px;
+	font-weight: bold;
 }
 
 /* Sacnasty Pie */

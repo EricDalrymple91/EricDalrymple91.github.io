@@ -27,6 +27,7 @@ const draftLottery = () => {
         const ball = document.getElementById(`sacnasty-ball-${e}`);
         ball.style.color = 'black';
         ball.style.backgroundColor = 'white';
+        text.style.textShadow = 'none';
         text.innerHTML = `Pick #${e}`;
     })
 
@@ -77,6 +78,7 @@ const revealPick = (pickNumber) => {
 
     ball.style.color = 'white';
     ball.style.backgroundColor = colors[pickNumber];
+    text.style.textShadow = '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black';
     text.innerHTML = document.getElementById(`pick${pickNumber}texthidden`).innerHTML;
 }
 
