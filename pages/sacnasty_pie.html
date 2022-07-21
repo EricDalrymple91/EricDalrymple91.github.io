@@ -81,8 +81,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="../js/sacnasty.js"></script>
     <script>
-        <!-- 8.54 shares of VTI at 234.19 -->
-        const vtiPot = 8.54 * 222.94;  // As of 2/12/22
+        <!-- 11.139 shares of VTI at 200.07 As of 7/21/22 -->
+        const vtiPot = 11.139 * 200.07;  // As of 7/21/22
 
         const pieSlice = (percentage) => {
             return (percentage * vtiPot).toFixed(2)
@@ -93,8 +93,8 @@
             data: {
                 datasets: [
                     {
-                        // Calcs Cash in (2000) / percent
-                        data: [pieSlice(0.75), pieSlice(0.025), pieSlice(0.05), pieSlice(0.175)],
+                        // Calcs Cash in (2500) / percent
+                        data: [pieSlice(0.8), pieSlice(0.02), pieSlice(0.04), pieSlice(0.14)],
                         backgroundColor: ['#0F9960', '#137CBD', '#D9822B', '#DB3737']
                     }
                 ],
