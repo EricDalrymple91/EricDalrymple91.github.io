@@ -81,6 +81,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="../js/sacnasty.js"></script>
     <script>
+        /*
+        Current paid years: 2021, 2022, 2023, 2024, 2025 = 2500 (5 * $500) input shares
+
+        2021 Results:
+            1st: Akhil -> 350
+            2nd: Dustin -> 100
+            3rd: Ben -> 50
+
+        */
+
         <!-- 11.139 shares of VTI at 200.07 As of 7/21/22 -->
         const vtiPot = 11.139 * 200.07;  // As of 7/21/22
 
@@ -88,14 +98,25 @@
             return (percentage * vtiPot).toFixed(2)
         }
 
+        const total_input_shares = 2500;
         const chart = {
             type: 'pie',
             data: {
                 datasets: [
                     {
                         // Calcs Cash in (2500) / percent
-                        data: [pieSlice(0.8), pieSlice(0.02), pieSlice(0.04), pieSlice(0.14)],
-                        backgroundColor: ['#0F9960', '#137CBD', '#D9822B', '#DB3737']
+                        data: [
+                            pieSlice(2000 / total_input_shares),  // Pot
+                            pieSlice(50 / total_input_shares),  // Ben
+                            pieSlice(100 / total_input_shares),  // Dustin
+                            pieSlice(350 / total_input_shares),  // Akhil
+                        ],
+                        backgroundColor: [
+                            '#0F9960',  // Green -> Pot
+                            '#137CBD',  // Blue -> Ben
+                            '#D9822B',  // Orange -> Dustin
+                            '#DB3737',  // Red -> Akhil
+                        ]
                     }
                 ],
                 labels: ['League Pot', 'Ben', 'Dustin', "Akhil"]
