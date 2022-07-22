@@ -98,7 +98,7 @@
                         backgroundColor: ['#0F9960', '#137CBD', '#D9822B', '#DB3737']
                     }
                 ],
-                labels: ['League Pot', 'Ben', 'Dustin', 'Akhil']
+                labels: ['League Pot', 'Ben', 'Dustin', "Akhil"]
             },
             options: {
                 plugins: {
@@ -106,7 +106,10 @@
                         callbacks: {
                             label: (context) => {
                                 let value = context.formattedValue;
-                                if (value.split('.')[1].length === 1) {
+                                if (!value.includes('.')) {
+                                    value = `${value}.00`;
+                                }
+                                else if (value.split('.')[1].length === 1) {
                                     value = value + '0';
                                 }
                                 return context.label + ': $' + value;
@@ -127,6 +130,8 @@
                 }
             }
         }
+
+        console.log(chart);
 
         new Chart(document.getElementById("chart"), chart)
     </script>
