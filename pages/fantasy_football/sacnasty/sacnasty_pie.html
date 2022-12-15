@@ -6,9 +6,9 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="../css/main.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/main.css">
         <title>SacNasty Pie</title>
-        <link rel="icon" href="../images/e.png">
+        <link rel="icon" href="../../../images/e.png">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
 
@@ -26,22 +26,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../index.html">Eric</a>
+              <a class="navbar-brand" href="../../../index.html">Eric</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="about.html">About Me <span class="sr-only">(current)</span><span class="glyphicon glyphicon-user"></span></a></li>
-                <li><a href="pythontips.html">Python Tips <span class="glyphicon glyphicon-sunglasses"></span></a></li>
+                <li class="active"><a href="../../about.html">About Me <span class="sr-only">(current)</span><span class="glyphicon glyphicon-user"></span></a></li>
+                <li><a href="../../pythontips.html">Python Tips <span class="glyphicon glyphicon-sunglasses"></span></a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <!-- Sacnasty -->
-                    <li><a href="sacnasty_draft.html">Sacnasty Draft</a></li>
-                    <li><a href="sacnasty_pie.html">Sacnasty Pie</a></li>
+                    <!-- Fantasy Football -->
+                    <li><a href="../league_links.html">Fantasy Football</a></li>
                     <!-- Paralaxed -->
                     <li role="separator" class="divider"></li>
-                    <li><a href="paralaxed.html">Paralaxed</a></li>
+                    <li><a href="../../paralaxed.html">Paralaxed</a></li>
     <!--				&lt;!&ndash; Oregon Tech &ndash;&gt;-->
     <!--				<li><a href="http://oregontech.maps.arcgis.com/home/index.html" target="_blank">ArcGIS Online</a></li>-->
     <!--				&lt;!&ndash; DuoLingo &ndash;&gt;-->
@@ -55,7 +54,7 @@
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="contact.html">Contact Me <span class="glyphicon glyphicon-send"></span></a></li>
+                <li><a href="../../contact.html">Contact Me <span class="glyphicon glyphicon-send"></span></a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -63,7 +62,7 @@
 
         <!-- Main -->
         <div class="sacnasty-main-div">
-            <h1>SacNasty Fantasy Football Pie</h1>
+            <h1><a class="link-header" href="https://sleeper.com/leagues/787194112439885824/league" target="_blank">SacNasty Fantasy Football Pie</a></h1>
             <h3>Anyone looking for a slice?</h3>
 
             <div class="sacnasty-pie-div">
@@ -79,7 +78,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="../js/sacnasty.js"></script>
+    <script src="../../../js/sacnasty.js"></script>
     <script>
         /*
         Current paid years: 2021, 2022, 2023, 2024, 2025 = 2500 (5 * $500) input shares
@@ -91,8 +90,8 @@
 
         */
 
-        <!-- 11.139 shares of VTI at 200.07 As of 7/21/22 -->
-        const vtiPot = 11.139 * 200.07;  // As of 7/21/22
+        <!-- 11.139 shares of VTI at 199.90 As of 12/14/22 -->
+        const vtiPot = 11.139 * 199.90;  // As of 12/14/22
 
         const pieSlice = (percentage) => {
             return (percentage * vtiPot).toFixed(2)

@@ -16,7 +16,34 @@ const shuffle = (array) => {
   return array;
 }
 
-const draftLottery = () => {
+const sacnasty_placements = {
+    'Jacob': 10 ** 3,
+    'Sear Woo': 9 ** 3,
+    'David': 8 ** 3,
+    'Eric': 7 ** 3,
+    'Steven': 6 ** 3,
+    'Guim': 5 ** 3
+}
+
+const bmsd_placements = {
+    'TPC': 10 ** 3,
+    'WC': 9 ** 3,
+    'Hubz': 8 ** 3,
+    'CS': 7 ** 3,
+    'ATG': 6 ** 3,
+    'MD': 5 ** 3
+}
+
+const not_another_placements = {
+    'Jacob': 10 ** 3,
+    'Sear Woo': 9 ** 3,
+    'David': 8 ** 3,
+    'Eric': 7 ** 3,
+    'Steven': 6 ** 3,
+    'Guim': 5 ** 3
+}
+
+const draftLottery = (placements) => {
 
     const ballDiv = document.getElementById('sacnasty-ball-div');
 
@@ -30,15 +57,6 @@ const draftLottery = () => {
         text.style.textShadow = 'none';
         text.innerHTML = `Pick #${e}`;
     })
-
-    const placements = {
-        'Jacob': 10 ** 3,
-        'Sear Woo': 9 ** 3,
-        'David': 8 ** 3,
-        'Eric': 7 ** 3,
-        'Steven': 6 ** 3,
-        'Guim': 5 ** 3
-    }
 
     let lotteryBalls = [];
 
