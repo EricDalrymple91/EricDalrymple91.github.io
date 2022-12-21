@@ -18,14 +18,14 @@ const shuffle = (array) => {
 
 const sacnasty_placements = {
     'Jacob': 10 ** 3,
-    'Sear Woo': 9 ** 3,
-    'David': 8 ** 3,
-    'Eric': 7 ** 3,
-    'Steven': 6 ** 3,
+    'Nibs': 9 ** 3,
+    'Steve': 8 ** 3,
+    'David': 7 ** 3,
+    'Eric': 6 ** 3,
     'Guim': 5 ** 3
 }
 
-const bmsd_placements = {
+const not_another_placements = {
     'TPC': 10 ** 3,
     'WC': 9 ** 3,
     'Hubz': 8 ** 3,
@@ -34,13 +34,13 @@ const bmsd_placements = {
     'MD': 5 ** 3
 }
 
-const not_another_placements = {
-    'Jacob': 10 ** 3,
-    'Sear Woo': 9 ** 3,
-    'David': 8 ** 3,
-    'Eric': 7 ** 3,
-    'Steven': 6 ** 3,
-    'Guim': 5 ** 3
+const bmsd_placements = {
+    'Eric': 10 ** 3,
+    'Akhil': 9 ** 3,
+    'Ben': 8 ** 3,
+    'Jerome': 7 ** 3,
+    'Scott': 6 ** 3,
+    'Will': 5 ** 3
 }
 
 const draftLottery = (placements) => {
