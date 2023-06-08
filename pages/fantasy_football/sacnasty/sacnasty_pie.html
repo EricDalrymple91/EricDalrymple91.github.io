@@ -87,17 +87,48 @@
             1st: Akhil -> 350
             2nd: Dustin -> 100
             3rd: Ben -> 50
+            
+        2022 Results:
+            1st: Sear -> 350
+            2nd: Akhil -> 100
+            3rd: Ben -> 50
 
         */
-
-        <!-- 11.139 shares of VTI at 199.90 As of 12/14/22 -->
-        const vtiPot = 11.139 * 199.90;  // As of 12/14/22
+        const numYearsPaid = 5;
+        const total_input_shares = numYearsPaid * 500;
+        
+        <!-- 11.139 shares of VTI at 213.72 As of 06/08/23 -->
+        const vtiPot = 11.139 * 213.72;  // As of 06/08/23
+        
+        const league = {
+        ben: 100,
+        dustin: 100,
+        akhil: 450,
+        sear: 350,
+        eric: 0,
+        mo: 0,
+        jacob: 0,
+        guim: 0,
+        david: 0,
+        steve: 0
+        }
+        
+        const leage_pot = total_input_shares - (league['ben'] + 
+                                                league['dustin'] + 
+                                                league['akhil'] + 
+                                                league['sear'] + 
+                                                league['eric'] + 
+                                                league['mo'] + 
+                                                league['jacob'] + 
+                                                league['guim'] + 
+                                                league['david'] + 
+                                                league['steve'])
 
         const pieSlice = (percentage) => {
             return (percentage * vtiPot).toFixed(2)
         }
 
-        const total_input_shares = 2500;
+        
         const chart = {
             type: 'pie',
             data: {
@@ -105,20 +136,22 @@
                     {
                         // Calcs Cash in (2500) / percent
                         data: [
-                            pieSlice(2000 / total_input_shares),  // Pot
-                            pieSlice(50 / total_input_shares),  // Ben
-                            pieSlice(100 / total_input_shares),  // Dustin
-                            pieSlice(350 / total_input_shares),  // Akhil
+                            pieSlice(league_pot / total_input_shares),  // Pot
+                            pieSlice(league['ben'] / total_input_shares),  // Ben
+                            pieSlice(league['dustin']  / total_input_shares),  // Dustin
+                            pieSlice(league['akhil']  / total_input_shares),  // Akhil
+                            pieSlice(league['sear']  / total_input_shares), // Sear
                         ],
                         backgroundColor: [
                             '#0F9960',  // Green -> Pot
                             '#137CBD',  // Blue -> Ben
                             '#D9822B',  // Orange -> Dustin
                             '#DB3737',  // Red -> Akhil
+                            '#8f34eb',  // Purple -> Sear
                         ]
                     }
                 ],
-                labels: ['League Pot', 'Ben', 'Dustin', "Akhil"]
+                labels: ['League Pot', 'Ben', 'Dustin', "Akhil", "Sear"]
             },
             options: {
                 plugins: {
