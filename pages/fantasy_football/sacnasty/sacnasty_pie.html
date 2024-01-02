@@ -93,24 +93,29 @@
             2nd: Akhil -> 100
             3rd: Ben -> 50
 
+        2023 Results:
+            1st: Steve -> 350
+            2nd: Guim -> 100
+            3rd: Eric -> 50
+
         */
         const numYearsPaid = 6;
         const totalInputshares = numYearsPaid * 500;
         
-        // 13.438 shares of VTI at 217.43 As of 06/13/23 
-        const vtiPot = 13.438 * 217.43;  // As of 06/13/23
+        // 13.438 shares of VTI at 237.22 As of 01/01/24
+        const vtiPot = 13.438 * 237.22;  // As of 01/01/24
         
         const league = {
             ben: 100,
             dustin: 100,
             akhil: 450,
             sear: 350,
-            eric: 0,
+            eric: 50,
             mo: 0,
             jacob: 0,
-            guim: 0,
+            guim: 100,
             david: 0,
-            steve: 0
+            steve: 350
         }
         
         const sumValues = obj => Object.values(obj).reduce((a, b) => a + b, 0);
@@ -133,6 +138,9 @@
                             pieSlice(league['dustin']  / totalInputshares),  // Dustin
                             pieSlice(league['akhil']  / totalInputshares),  // Akhil
                             pieSlice(league['sear']  / totalInputshares), // Sear
+                            pieSlice(league['steve']  / totalInputshares),  // Steve
+                            pieSlice(league['guim']  / totalInputshares),  // Guim
+                            pieSlice(league['eric']  / totalInputshares), // Eric
                         ],
                         backgroundColor: [
                             '#0F9960',  // Green -> Pot
@@ -140,10 +148,13 @@
                             '#D9822B',  // Orange -> Dustin
                             '#DB3737',  // Red -> Akhil
                             '#8f34eb',  // Purple -> Sear
+                            '#dfd14e',  // Mustard -> Steve
+                            '#2c3e2c',  // Red -> Guim
+                            '#800909',  // Rusted Red -> Eric
                         ]
                     }
                 ],
-                labels: ['League Pot', 'Ben', 'Dustin', "Akhil", "Sear"]
+                labels: ['League Pot', 'Ben', 'Dustin', "Akhil", "Sear", "Steve", "Guim", "Eric"]
             },
             options: {
                 plugins: {
