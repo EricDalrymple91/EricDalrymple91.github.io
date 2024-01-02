@@ -17,12 +17,12 @@ const shuffle = (array) => {
 }
 
 const sacnasty_placements = {
-    'Jacob': 10 ** 3,
-    'Nibs': 9 ** 3,
-    'Steve': 8 ** 3,
-    'David': 7 ** 3,
-    'Eric': 6 ** 3,
-    'Guim': 5 ** 3
+    'Mo': 10 ** 3,
+    'Jacob': 9 ** 3,
+    'Dustin': 8 ** 3,
+    'Sear': 7 ** 3,
+    'Ben': 6 ** 3,
+    'David': 5 ** 3
 }
 
 const not_another_placements = {
@@ -36,11 +36,11 @@ const not_another_placements = {
 
 const bmsd_placements = {
     'Eric': 10 ** 3,
-    'Akhil': 9 ** 3,
-    'Ben': 8 ** 3,
-    'Jerome': 7 ** 3,
-    'Scott': 6 ** 3,
-    'Will': 5 ** 3
+    'Guim': 9 ** 3,
+    'Jerome': 8 ** 3,
+    'Scott': 7 ** 3,
+    'David': 6 ** 3,
+    'Akhil': 5 ** 3
 }
 
 const draftLottery = (placements) => {
