@@ -26,12 +26,12 @@ const sacnasty_placements = {
 }
 
 const not_another_placements = {
-    'TPC': 10 ** 3,
-    'WC': 9 ** 3,
+    'Chris': 10 ** 3,
+    'Snaz': 9 ** 3,
     'Hubz': 8 ** 3,
-    'CS': 7 ** 3,
-    'ATG': 6 ** 3,
-    'MD': 5 ** 3
+    'ATG': 7 ** 3,
+    'Dev': 6 ** 3,
+    'Eric': 5 ** 3
 }
 
 const bmsd_placements = {
