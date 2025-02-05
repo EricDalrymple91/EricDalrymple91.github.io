@@ -268,7 +268,7 @@ a {
 .p-section {
 	font-size: 2rem;
 	padding: 2rem;
-	background-color: #333;
+	background-color: #2b5b84;
 	color: white;
 }
 
@@ -302,4 +302,40 @@ a {
 .link-header:hover {
 	color: whitesmoke;
 	cursor: pointer;
+}
+
+
+/* Aram Tourney Page */
+.aram-tourney-div {
+	text-align: center;
+	padding-top: 10px;
+	margin: auto;
+}
+
+.summoner-select {
+	margin: auto;
+	width: 300px;
+	position: relative;
+}
+
+.summoner-select select {
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 22px;
+	background-color: #eab676;
+	padding: 10px;
+}
+
+.summoner-roller {
+	margin-top: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	border-radius: 5px;
+	color: white;
+	background-color: #e28743;
+	width: 150px;
+}
+
+.champion-pick {
+	color: white;
 }
