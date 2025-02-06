@@ -326,6 +326,14 @@ a {
 	padding: 10px;
 }
 
+.summoner-select select:hover {
+    background-color: #D19F66;
+}
+
+.summoner-select select:focus {
+    outline: none;
+}
+
 .summoner-roller {
 	margin-top: 10px;
 	font-family: 'Roboto', sans-serif;
@@ -338,4 +346,19 @@ a {
 
 .champion-pick {
 	color: white;
+}
+
+#championPick1 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#championPick2 {
+    opacity: 0;
+    transition: opacity 1.0s ease-in-out;
+}
+
+#championPick3 {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
