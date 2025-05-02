@@ -27,6 +27,12 @@ function roll(summoner) {
         case "Hogi":
             championPicks = championPicker(HogiChampions);
             break;
+        case "Tori":
+            championPicks = championPicker(ToriChampions);
+        case "David":
+            championPicks = championPicker(DavidChampions);
+        case "Nate":
+            championPicks = championPicker(NateChampions);
         default:
             break;
     }
@@ -113,6 +119,13 @@ const EricChampions = leagueOfLegendsChampions.filter(
 
 const MickeyChampions = leagueOfLegendsChampions.filter(
     item => ![
+      "Aatrox", "Aurelion Sol", "Azir", "Camille", "Cassiopeia", "Cho'Gath", "Dr. Mundo",
+      "Fiora", "Galio", "Gwen", "Hecarim", "Irelia", "Janna", "Jax", "Jayce", "Karthus",
+      "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Lulu", "Malzahar", "Maokai",
+      "Naafiri", "Olaf", "Ornn", "Pyke", "Qiyana", "Rakan", "Rammus", "Rek'Sai", "Rengar",
+      "Sejuani", "Seraphine", "Shyvana", "Skarner", "Swain", "Taliyah", "Talon", "Tryndamere",
+      "Udyr", "Urgot", "Vel'Koz", "Vex", "Vi", "Vladimir", "Volibear", "Yone", "Yorick",
+      "Yuumi", "Zac"
     ].includes(item)
 )
 
@@ -138,5 +151,33 @@ const PatChampions = leagueOfLegendsChampions.filter(
 
 const HogiChampions = leagueOfLegendsChampions.filter(
     item => ![
+    ].includes(item)
+)
+
+const ToriChampions = leagueOfLegendsChampions.filter(
+     item => ![
+    ].includes(item)
+)
+
+const DavidChampions = leagueOfLegendsChampions.filter(
+     item => ![
+    ].includes(item)
+)
+
+const NateChampions = leagueOfLegendsChampions.filter(
+     item => ![
+        "Ahri", "Akshan", "Alistar", "Amumu", "Annie", "Aphelios", "Aurelion Sol",
+        "Azir", "Bard", "Bel'Veth", "Briar", "Camille", "Cassiopeia", "Diana", "Elise",
+        "Evelynn", "Fiddlesticks", "Fiora", "Gangplank", "Gnar", "Gragas", "Gwen",
+        "Hecarim", "Heimerdinger", "Irelia", "Ivern", "Janna", "Jarvan IV", "Jax",
+        "Jayce", "Jhin", "K'Sante", "Kai'Sa", "Kalista", "Kassadin", "Kayle", "Kayn",
+        "Kha'Zix", "Kindred", "Kled", "Kog'Maw", "LeBlanc", "Lillia", "Lissandra",
+        "Lucian", "Lulu", "Malzahar", "Maokai", "Milio", "Naafiri", "Nami", "Nasus",
+        "Neeko", "Nilah", "Nocturne", "Nunu & Willump", "Olaf", "Orianna", "Pyke",
+        "Qiyana", "Quinn", "Rakan", "Rammus", "Rek'Sai", "Renata Glasc", "Renekton",
+        "Rengar", "Ryze", "Samira", "Sejuani", "Seraphine", "Shaco", "Shyvana", "Singed",
+        "Skarner", "Swain", "Syndra", "Tahm Kench", "Taliyah", "Talon", "Trundle", "Urgot",
+        "Vex", "Viktor", "Vladimir", "Wukong", "Xayah", "Xin Zhao", "Yasuo", "Yorick",
+        "Yuumi", "Zeri", "Ziggs", "Zilean", "Zyra"
     ].includes(item)
 )
