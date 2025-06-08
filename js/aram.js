@@ -113,7 +113,7 @@ function roll() {
             const iconCell = document.createElement("td");
             iconCell.classList.add("image-cell");
             const icon = document.createElement("img");
-            icon.src = "../images/lol_champ_icons/" + champ.replace(/[^a-zA-Z0-9]/g, "") + ".png";
+            icon.src = "../images/lol_champion_icons/" + champ.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() + ".png";
             icon.alt = champ + "icon";
             icon.height = 75;
             icon.width = 75;
