@@ -174,6 +174,7 @@ function getChampionPoolBySummoner(summoner) {
     }
 }
 
+
 function copyChampPoolName(champPool) {
     navigator.clipboard.writeText(champPool.join(", "))
 }
