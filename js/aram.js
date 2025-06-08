@@ -1,4 +1,4 @@
-function _roll() {
+function roll() {
     const summoner1 = document.getElementById('summoner1').value;
     const summoner2 = document.getElementById('summoner2').value;
     const summoner3 = document.getElementById('summoner3').value;
