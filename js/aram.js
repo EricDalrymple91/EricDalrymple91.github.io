@@ -1,78 +1,181 @@
-function roll(summoner) {
-    const championPick1 = document.getElementById('championPick1');
-    const championPick2 = document.getElementById('championPick2');
-    const championPick3 = document.getElementById('championPick3');
+function _roll() {
+    const summoner1 = document.getElementById('summoner1').value;
+    const summoner2 = document.getElementById('summoner2').value;
+    const summoner3 = document.getElementById('summoner3').value;
 
-    championPick1.innerHTML = "";
-    championPick2.innerHTML = "";
-    championPick3.innerHTML = "";
+    const rollsSection = document.getElementById("rollsSection");
+    rollsSection.innerHTML = "";  // clear previous content
 
-    let championPicks = ["", "", ""];
-    switch (summoner) {
-        case "Eric":
-            championPicks = championPicker(EricChampions);
-            break;
-        case "Mickey":
-            championPicks = championPicker(MickeyChampions);
-            break;
-        case "Caitlin":
-            championPicks = championPicker(CaitlinChampions);
-            break;
-        case "Ben":
-            championPicks = championPicker(BenChampions);
-            break;
-        case "Pat":
-            championPicks = championPicker(PatChampions);
-            break;
-        case "Hogi":
-            championPicks = championPicker(HogiChampions);
-            break;
-        case "Tori":
-            championPicks = championPicker(ToriChampions);
-        case "David":
-            championPicks = championPicker(DavidChampions);
-        case "Nate":
-            championPicks = championPicker(NateChampions);
-        default:
-            break;
+    // Check to make sure all three summoners were selected
+    if (
+        summoner1 === "None" ||
+        summoner2 === "None" ||
+        summoner3 === "None"
+    ) {
+        const missingSummonersText = document.createElement("h3");
+        missingSummonersText.textContent = "Fortune doesn't favor fools..."
+        missingSummonersText.color = "white";
+        missingSummonersText.classList.add("fade-in")
+        rollsSection.appendChild(missingSummonersText);
+        setTimeout(() => {
+            missingSummonersText.classList.add("visible");
+        }, 10);
+        return;
     }
 
-    championPicks.forEach((champion, index) => {
-        if (index === 0) {
-            championPick1.style.opacity = 0;
-            setTimeout(() => {
-                championPick1.innerHTML = champion;
-                championPick1.style.opacity = 1;
-            }, 500);
-        } else if (index === 1) {
-            championPick2.style.opacity = 0;
-            setTimeout(() => {
-                championPick2.innerHTML = champion;
-                championPick2.style.opacity = 1;
-            }, 1000);
-        } else {
-            championPick3.style.opacity = 0;
-            setTimeout(() => {
-                championPick3.innerHTML = champion;
-                championPick3.style.opacity = 1;
-            }, 1500);
+    // Check to make sure there are no duplicate selections
+    const summoners = [summoner1, summoner2, summoner3].sort();
+    const unique = new Set(summoners);
+    if (unique.size < summoners.length) {
+        const duplicateSummonersText = document.createElement("h3");
+        duplicateSummonersText.textContent = "The shadow cannot be duplicated...."
+        duplicateSummonersText.color = "white";
+        duplicateSummonersText.classList.add("fade-in")
+        rollsSection.appendChild(duplicateSummonersText);
+        setTimeout(() => {
+            duplicateSummonersText.classList.add("visible");
+        }, 10);
+        return;
+    }
+
+    // Select nine unique champions (three for each summoner)
+    const championPoolBySummoner = {
+        [summoners[0]]: getChampionPoolBySummoner(summoners[0]),
+        [summoners[1]]: getChampionPoolBySummoner(summoners[1]),
+        [summoners[2]]: getChampionPoolBySummoner(summoners[2]),
+    };
+
+    const selectedChampPool = [];
+
+    summoners.forEach((summoner, index) => {
+        let championPool = championPoolBySummoner[summoner];
+        let championPoolLength = championPool.length;
+        let targetLength = 3 * (index + 1);
+        while (selectedChampPool.length < targetLength) {
+            const randomIndex = Math.floor(Math.random() * championPoolLength);
+            const randomChampion = championPool[randomIndex];
+            if (selectedChampPool.includes(randomChampion)) {
+                continue;
+            }
+            selectedChampPool.push(randomChampion);
         }
+    })
+    selectedChampPool.sort()
+
+    // Create an object that maps the champ and those who own it
+    let ownershipByChamp = {};
+    selectedChampPool.forEach(champ => {
+        ownershipByChamp[champ] = [];
+        summoners.forEach(summoner => {
+            if (getChampionPoolBySummoner(summoner).includes(champ)) {
+                ownershipByChamp[champ].push(true);
+            } else {
+                ownershipByChamp[champ].push(false);
+            }
+        });
+    });
+
+    // Create the output display table
+    const table = document.createElement("table");
+    table.classList.add("champSelectionTable");
+
+    // Create header
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+
+    const iconHeader = document.createElement("th");
+    iconHeader.textContent = "";
+    headerRow.appendChild(iconHeader);
+
+    const champHeader = document.createElement("th");
+    champHeader.textContent = "Champion";
+    headerRow.appendChild(champHeader);
+
+    summoners.forEach(name => {
+        const th = document.createElement("th");
+        th.textContent = name;
+        headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Prepare tbody
+    const tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+    rollsSection.appendChild(table);
+
+    // Add rows with suspenseful delay
+    selectedChampPool.forEach((champ, index) => {
+        setTimeout(() => {
+            const row = document.createElement("tr");
+
+            const iconCell = document.createElement("td");
+            iconCell.classList.add("image-cell");
+            const icon = document.createElement("img");
+            icon.src = "../images/lol_champ_icons/" + champ.replace(/[^a-zA-Z0-9]/g, "") + ".png";
+            icon.alt = champ + "icon";
+            icon.height = 75;
+            icon.width = 75;
+            iconCell.appendChild(icon);
+            row.appendChild(iconCell);
+
+            const champCell = document.createElement("td");
+            champCell.textContent = champ;
+            row.appendChild(champCell);
+
+            ownershipByChamp[champ].forEach(val => {
+                const cell = document.createElement("td");
+                cell.textContent = val ? "✓" : "✗";
+                cell.style.color = val ? "#4CAF50" : "#F44336"; // green or red
+                row.appendChild(cell);
+            });
+
+            tbody.appendChild(row);
+
+            if (index === selectedChampPool.length - 1) {
+                // Add copy champs list button
+                const copyChampsListButton = document.createElement("button");
+                copyChampsListButton.textContent = "Copy Champion Pool";
+                copyChampsListButton.classList.add("roll-button");
+                copyChampsListButton.addEventListener("click", () => {
+                    copyChampPoolName(selectedChampPool);
+                });
+                rollsSection.appendChild(copyChampsListButton);
+            }
+
+        }, index * 300); // 300ms delay between each row
     });
 }
 
 
-function championPicker(championPool) {
-    let championPicks = [];
-    let championPoolLength = championPool.length;
-    while (championPicks.length < 3) {
-        const randomIndex = Math.floor(Math.random() * championPoolLength);
-        const randomChampion = championPool[randomIndex];
-        if (championPicks.includes(randomChampion)) {
-            continue;
-        }
-        championPicks.push(randomChampion);
+function getChampionPoolBySummoner(summoner) {
+    switch (summoner) {
+        case "Eric":
+            return EricChampions;
+        case "Mickey":
+            return MickeyChampions;
+        case "Caitlin":
+            return CaitlinChampions;
+        case "Ben":
+            return BenChampions;
+        case "Pat":
+            return PatChampions;
+        case "Hogi":
+            return HogiChampions;
+        case "Tori":
+            return ToriChampions;
+        case "David":
+            return DavidChampions;
+        case "Nate":
+            return NateChampions;
+        default:
+            return leagueOfLegendsChampions;
     }
-    return championPicks.sort();
+}
+
+function copyChampPoolName(champPool) {
+    navigator.clipboard.writeText(champPool.join(", "))
 }
 
 
@@ -119,23 +222,23 @@ const EricChampions = leagueOfLegendsChampions.filter(
 
 const MickeyChampions = leagueOfLegendsChampions.filter(
     item => ![
-      "Aatrox", "Aurelion Sol", "Azir", "Camille", "Cassiopeia", "Cho'Gath", "Dr. Mundo",
-      "Fiora", "Galio", "Gwen", "Hecarim", "Irelia", "Janna", "Jax", "Jayce", "Karthus",
-      "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Lulu", "Malzahar", "Maokai",
-      "Naafiri", "Olaf", "Ornn", "Pyke", "Qiyana", "Rakan", "Rammus", "Rek'Sai", "Rengar",
-      "Sejuani", "Seraphine", "Shyvana", "Skarner", "Swain", "Taliyah", "Talon", "Tryndamere",
-      "Udyr", "Urgot", "Vel'Koz", "Vex", "Vi", "Vladimir", "Volibear", "Yone", "Yorick",
-      "Yuumi", "Zac"
+        "Aatrox", "Aurelion Sol", "Azir", "Camille", "Cassiopeia", "Cho'Gath", "Dr. Mundo",
+        "Fiora", "Galio", "Gwen", "Hecarim", "Irelia", "Janna", "Jax", "Jayce", "Karthus",
+        "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Lulu", "Malzahar", "Maokai",
+        "Naafiri", "Olaf", "Ornn", "Pyke", "Qiyana", "Rakan", "Rammus", "Rek'Sai", "Rengar",
+        "Sejuani", "Seraphine", "Shyvana", "Skarner", "Swain", "Taliyah", "Talon", "Tryndamere",
+        "Udyr", "Urgot", "Vel'Koz", "Vex", "Vi", "Vladimir", "Volibear", "Yone", "Yorick",
+        "Yuumi", "Zac"
     ].includes(item)
 )
 
 const CaitlinChampions = leagueOfLegendsChampions.filter(
     item => ![
-      "Aatrox", "Ambessa", "Aphelios", "Azir", "Belveth", "Camille", "Cassiopeia",
-      "Diana", "Gnar", "Gragas", "Gwen", "Hwei", "Ivern", "Kalista", "Kayn",
-      "Kennen", "Kled", "Ksante", "Lissandra", "Naafiri", "Nilah", "Nocturne",
-      "Qiyana", "Rell", "Rumble", "Samira", "Sejuani", "Sett", "Shaco", "Shyvana",
-      "Smolder", "Talon", "Urgot", "Wukong", "Yasuo", "Zoe"
+        "Aatrox", "Ambessa", "Aphelios", "Azir", "Belveth", "Camille", "Cassiopeia",
+        "Diana", "Gnar", "Gragas", "Gwen", "Hwei", "Ivern", "Kalista", "Kayn",
+        "Kennen", "Kled", "Ksante", "Lissandra", "Naafiri", "Nilah", "Nocturne",
+        "Qiyana", "Rell", "Rumble", "Samira", "Sejuani", "Sett", "Shaco", "Shyvana",
+        "Smolder", "Talon", "Urgot", "Wukong", "Yasuo", "Zoe"
     ].includes(item)
 );
 
@@ -155,17 +258,17 @@ const HogiChampions = leagueOfLegendsChampions.filter(
 )
 
 const ToriChampions = leagueOfLegendsChampions.filter(
-     item => ![
+    item => ![
     ].includes(item)
 )
 
 const DavidChampions = leagueOfLegendsChampions.filter(
-     item => ![
+    item => ![
     ].includes(item)
 )
 
 const NateChampions = leagueOfLegendsChampions.filter(
-     item => ![
+    item => ![
         "Ahri", "Akshan", "Alistar", "Amumu", "Annie", "Aphelios", "Aurelion Sol",
         "Azir", "Bard", "Bel'Veth", "Briar", "Camille", "Cassiopeia", "Diana", "Elise",
         "Evelynn", "Fiddlesticks", "Fiora", "Gangplank", "Gnar", "Gragas", "Gwen",
