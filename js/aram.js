@@ -40,9 +40,9 @@ function roll() {
 
     // Select nine unique champions (three for each summoner)
     const championPoolBySummoner = {
-        [summoners[0]]: getChampionPoolBySummoner(summoners[0]),
-        [summoners[1]]: getChampionPoolBySummoner(summoners[1]),
-        [summoners[2]]: getChampionPoolBySummoner(summoners[2]),
+        [summoners[0]]: getChampionTop50BySummoner(summoners[0]),
+        [summoners[1]]: getChampionTop50BySummoner(summoners[1]),
+        [summoners[2]]: getChampionTop50BySummoner(summoners[2]),
     };
 
     const selectedChampPool = [];
@@ -67,7 +67,7 @@ function roll() {
     selectedChampPool.forEach(champ => {
         ownershipByChamp[champ] = [];
         summoners.forEach(summoner => {
-            if (getChampionPoolBySummoner(summoner).includes(champ)) {
+            if (getChampionTop50BySummoner(summoner).includes(champ)) {
                 ownershipByChamp[champ].push(true);
             } else {
                 ownershipByChamp[champ].push(false);
@@ -149,6 +149,33 @@ function roll() {
 }
 
 
+function getChampionTop50BySummoner(summoner) {
+    switch (summoner) {
+        case "Eric":
+            return EricTop50;
+        case "Mickey":
+            return MickeyTop50;
+        case "Caitlin":
+            return CaitlinTop50;
+        case "Ben":
+            return BenTop50;
+        case "Pat":
+            return PatTop50;
+        case "Hogi":
+            return HogiTop50;
+        case "Tori":
+            // TODO: Update this when Tori delivers here top 50
+            return ToriChampions;
+        case "David":
+            return DavidTop50;
+        case "Nate":
+            return NateTop50;
+        default:
+            return leagueOfLegendsChampions;
+    }
+}
+
+
 function getChampionPoolBySummoner(summoner) {
     switch (summoner) {
         case "Eric":
@@ -199,7 +226,118 @@ const leagueOfLegendsChampions = [
     "Mel", "Smolder", "Aurora", "Ambessa", "Hwei",
 ];
 
+// Top 50
+const EricTop50 = [
+    "Aatrox", "Ambessa", "Aurelion Sol", "Bel'Veth", "Brand",
+    "Briar", "Cho'Gath", "Darius", "Dr. Mundo", "Fiora",
+    "Fizz", "Garen", "Gnar", "Gragas", "Gwen",
+    "Illaoi", "Jax", "Kennen", "Lillia", "Lux",
+    "Malphite", "Mel", "Mordekaiser", "Nasus", "Olaf",
+    "Poppy", "Quinn", "Renekton", "Rumble", "Sejuani",
+    "Senna", "Sett", "Shen", "Shyvana", "Sion",
+    "Skarner", "Sylas", "Tahm Kench", "Trundle", "Tryndamere",
+    "Urgot", "Vayne", "Veigar", "Vel'Koz", "Volibear",
+    "Warwick", "Wukong", "Yasuo", "Yorick", "Zac",
+]
 
+const MickeyTop50 = [
+    "Amumu", "Anivia", "Ashe", "Brand", "Braum",
+    "Caitlyn", "Corki", "Draven", "Ezreal", "Gnar",
+    "Heimerdinger", "Illaoi", "Jinx", "Kai'Sa", "Kalista",
+    "Kindred", "Lee Sin", "Leona", "Lillia", "Lucian",
+    "Malphite", "Milio", "Miss Fortune", "Mordekaiser", "Morgana",
+    "Nautilus", "Orianna", "Ornn", "Pantheon", "Poppy",
+    "Quinn", "Rell", "Renata Glasc", "Renekton", "Riven",
+    "Senna", "Sion", "Sivir", "Taric", "Teemo",
+    "Thresh", "Tristana", "Twitch", "Varus", "Vayne",
+    "Vi", "Volibear", "Xayah", "Zac", "Zed",
+];
+
+
+const CaitlinTop50 = [
+    "Ahri", "Anivia", "Annie", "Ashe", "Brand",
+    "Caitlyn", "Cho'Gath", "Elise", "Graves", "Gwen",
+    "Hecarim", "Jinx", "Kai'Sa", "Karma", "Kindred",
+    "Lillia", "Lulu", "Lux", "Malphite", "Maokai",
+    "Mel", "Milio", "Miss Fortune", "Nautilus", "Neeko",
+    "Poppy", "Quinn", "Rell", "Renekton", "Senna",
+    "Seraphine", "Sivir", "Smolder", "Taric", "Teemo",
+    "Thresh", "Tristana", "Trundle", "Twisted Fate", "Twitch",
+    "Varus", "Vayne", "Veigar", "Vel'Koz", "Volibear",
+    "Warwick", "Xayah", "Xerath", "Zac", "Zyra",
+];
+
+const BenTop50 = [
+    "Aatrox", "Ambessa", "Amumu", "Aurora", "Azir",
+    "Blitzcrank", "Braum", "Briar", "Darius", "Dr. Mundo",
+    "Ekko", "Galio", "Gnar", "Gwen", "Illaoi",
+    "Irelia", "Jarvan IV", "Jax", "Jayce", "Kayn",
+    "Kennen", "Lee Sin", "Leona", "Malphite", "Milio",
+    "Mordekaiser", "Nautilus", "Ornn", "Pantheon", "Poppy",
+    "Qiyana", "Quinn", "Rek'Sai", "Rell", "Renekton",
+    "Riven", "Sett", "Shen", "Skarner", "Sylas",
+    "Tahm Kench", "Taliyah", "Talon", "Thresh", "Vi",
+    "Volibear", "Wukong", "Xerath", "Yone", "Zac",
+];
+
+const PatTop50 = [
+    "Amumu", "Ashe", "Azir", "Brand", "Caitlyn",
+    "Camille", "Cassiopeia", "Cho'Gath", "Corki", "Dr. Mundo",
+    "Gangplank", "Gragas", "Gwen", "Illaoi", "Jarvan IV",
+    "Jax", "Jinx", "Katarina", "Kled", "Lillia",
+    "Lissandra", "Lucian", "Mordekaiser", "Nasus", "Olaf",
+    "Pantheon", "Poppy", "Renata Glasc", "Renekton", "Riven",
+    "Rumble", "Ryze", "Sett", "Shyvana", "Sion",
+    "Sivir", "Swain", "Tahm Kench", "Tryndamere", "Twitch",
+    "Udyr", "Varus", "Vayne", "Vel'Koz", "Viego",
+    "Vladimir", "Xayah", "Yasuo", "Yone", "Zac",
+];
+
+const HogiTop50 = [
+    "Ahri", "Amumu", "Anivia", "Blitzcrank", "Brand",
+    "Caitlyn", "Cho'Gath", "Fizz", "Galio", "Gangplank",
+    "Gnar", "Gragas", "Jarvan IV", "Jhin", "Jinx",
+    "Lissandra", "Lulu", "Lux", "Malzahar", "Maokai",
+    "Mel", "Miss Fortune", "Mordekaiser", "Morgana", "Nami",
+    "Nautilus", "Orianna", "Ornn", "Pyke", "Renata Glasc",
+    "Rumble", "Samira", "Sejuani", "Sett", "Shaco",
+    "Shen", "Soraka", "Swain", "Syndra", "Thresh",
+    "Twisted Fate", "Vayne", "Veigar", "Vel'Koz", "Vex",
+    "Xerath", "Zac", "Zilean", "Zoe", "Zyra",
+];
+
+const ToriTop50 = [
+
+];
+
+const DavidTop50 = [
+    "Aatrox", "Anivia", "Ashe", "Aurelion Sol", "Brand",
+    "Braum", "Caitlyn", "Corki", "Darius", "Ekko",
+    "Ezreal", "Galio", "Garen", "Gnar", "Graves",
+    "Jax", "Jinx", "Kai'Sa", "Karma", "Kennen",
+    "Lissandra", "Lux", "Malphite", "Miss Fortune", "Mordekaiser",
+    "Morgana", "Nautilus", "Neeko", "Pantheon", "Poppy",
+    "Ryze", "Seraphine", "Sett", "Sivir", "Swain",
+    "Syndra", "Taric", "Teemo", "Thresh", "Tristana",
+    "Tryndamere", "Urgot", "Varus", "Vel'Koz", "Vi",
+    "Viktor", "Warwick", "Wukong", "Xayah", "Ziggs",
+];
+
+const NateTop50 = [
+    "Ahri", "Akali", "Anivia", "Ashe", "Aurelion Sol",
+    "Braum", "Caitlyn", "Cho'Gath", "Corki", "Darius",
+    "Dr. Mundo", "Draven", "Ekko", "Galio", "Garen",
+    "Illaoi", "Jarvan IV", "Jax", "Jinx", "Karma",
+    "Kennen", "Leona", "Malphite", "Maokai", "Mel",
+    "Miss Fortune", "Mordekaiser", "Nami", "Nautilus", "Neeko",
+    "Orianna", "Poppy", "Quinn", "Rell", "Renekton",
+    "Riven", "Rumble", "Sejuani", "Sett", "Shen",
+    "Sivir", "Taric", "Thresh", "Twitch", "Varus",
+    "Vayne", "Vi", "Volibear", "Warwick", "Zac",
+];
+
+
+// Owned champs
 const EricChampions = leagueOfLegendsChampions.filter(
     item => ![
         "Ahri", "Akali", "Akshan", "Alistar", "Ambessa", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "Aurora", "Azir",
