@@ -489,3 +489,13 @@ button:active {
 	white-space: nowrap;
 	padding: 4px;
 }
+
+.aram-header a {
+	color: white;
+	 text-decoration: none;
+}
+
+.aram-header a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
