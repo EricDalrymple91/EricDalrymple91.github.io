@@ -54,6 +54,12 @@ function roll() {
         while (selectedChampPool.length < targetLength) {
             const randomIndex = Math.floor(Math.random() * championPoolLength);
             const randomChampion = championPool[randomIndex];
+
+            // Ban Mordekaiser - 6/10/25
+            if (selectedChampPool === "Mordekaiser") {
+                continue
+            }
+
             if (selectedChampPool.includes(randomChampion)) {
                 continue;
             }
@@ -164,8 +170,7 @@ function getChampionTop50BySummoner(summoner) {
         case "Hogi":
             return HogiTop50;
         case "Tori":
-            // TODO: Update this when Tori delivers here top 50
-            return ToriChampions;
+            return ToriTop50;
         case "David":
             return DavidTop50;
         case "Nate":
@@ -307,7 +312,15 @@ const HogiTop50 = [
 ];
 
 const ToriTop50 = [
-
+    "Ahri", "Amumu", "Anivia", "Annie", "Ashe",
+    "Aurelion Sol", "Azir", "Caitlyn", "Cassiopeia", "Cho'Gath",
+    "Diana", "Draven", "Fiddlesticks", "Illaoi", "Jinx",
+    "Karma", "Leona", "Lillia", "Lissandra", "Lulu",
+    "Lux", "Malphite", "Milio", "Miss Fortune", "Mordekaiser",
+    "Morgana", "Nami", "Neeko", "Nidalee", "Nunu & Willump",
+    "Orianna", "Renata Glasc", "Senna", "Seraphine", "Sona",
+    "Swain", "Syndra", "Taric", "Thresh", "Veigar",
+    "Vel'Koz", "Vex", "Vi", "Viego", "Vladimir",
 ];
 
 const DavidTop50 = [
