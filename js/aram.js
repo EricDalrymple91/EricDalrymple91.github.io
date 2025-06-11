@@ -47,6 +47,10 @@ function roll() {
 
     const selectedChampPool = [];
 
+    const bannedChampions = [
+        "Mordekaiser",  // 6/10/25
+    ];
+
     summoners.forEach((summoner, index) => {
         let championPool = championPoolBySummoner[summoner];
         let championPoolLength = championPool.length;
@@ -55,9 +59,8 @@ function roll() {
             const randomIndex = Math.floor(Math.random() * championPoolLength);
             const randomChampion = championPool[randomIndex];
 
-            // Ban Mordekaiser - 6/10/25
-            if (selectedChampPool === "Mordekaiser") {
-                continue
+            if (bannedChampions.includes(randomChampion)) {
+                continue;
             }
 
             if (selectedChampPool.includes(randomChampion)) {
