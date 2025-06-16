@@ -236,13 +236,13 @@ const leagueOfLegendsChampions = [
 
 // Top 50
 const EricTop50 = [
-    "Aatrox", "Ambessa", "Aurelion Sol", "Bel'Veth", "Brand",
-    "Briar", "Cho'Gath", "Darius", "Dr. Mundo", "Fiora",
-    "Fizz", "Garen", "Gnar", "Gragas", "Gwen",
-    "Illaoi", "Jax", "Kennen", "Lillia", "Lux",
-    "Malphite", "Mel", "Mordekaiser", "Nasus", "Olaf",
-    "Poppy", "Quinn", "Renekton", "Rumble", "Sejuani",
-    "Senna", "Sett", "Shen", "Shyvana", "Sion",
+    "Aatrox", "Alistar", "Ambessa", "Aurelion Sol", "Bel'Veth",
+    "Brand", "Briar", "Cho'Gath", "Darius", "Dr. Mundo",
+    "Fiora", "Fizz", "Garen", "Gnar", "Gragas",
+    "Gwen", "Illaoi", "Jax", "Kennen", "Lillia",
+    "Lux", "Malphite", "Master Yi", "Mel", "Mordekaiser",
+    "Nasus", "Olaf", "Quinn", "Renekton", "Rumble",
+    "Sejuani", "Sett", "Shen", "Shyvana", "Sion",
     "Skarner", "Sylas", "Tahm Kench", "Trundle", "Tryndamere",
     "Urgot", "Vayne", "Veigar", "Vel'Koz", "Volibear",
     "Warwick", "Wukong", "Yasuo", "Yorick", "Zac",
