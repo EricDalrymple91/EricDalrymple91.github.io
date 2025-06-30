@@ -340,16 +340,16 @@ const DavidTop50 = [
 ];
 
 const NateTop50 = [
-    "Ahri", "Alistar", "Anivia", "Ashe", "Aurora",
-    "Brand", "Braum", "Caitlyn", "Corki", "Darius",
-    "Dr. Mundo", "Draven", "Ekko", "Galio", "Gnar",
-    "Illaoi", "Jax", "Jinx", "Karma", "Kindred",
-    "Leona", "Lulu", "Maokai", "Miss Fortune", "Morgana",
-    "Nami", "Nautilus", "Neeko", "Orianna", "Pantheon",
-    "Poppy", "Quinn", "Rell", "Renata Glasc", "Renekton",
-    "Sejuani", "Sett", "Shen", "Sivir", "Taric",
-    "Thresh", "Twitch", "Varus", "Vayne", "Vi",
-    "Vladimir", "Volibear", "Warwick", "Xayah", "Zac",
+    "Ahri", "Anivia", "Ashe", "Aurora", "Braum",
+    "Caitlyn", "Cho'Gath", "Corki", "Darius", "Dr. Mundo",
+    "Galio", "Garen", "Gnar", "Illaoi", "Jarvan IV",
+    "Jax", "K'Sante", "Kai'Sa", "Karma", "Kindred",
+    "Kog'Maw", "Leona", "Lulu", "Lux", "Maokai",
+    "Milio", "Morgana", "Neeko", "Orianna", "Poppy",
+    "Quinn", "Rell", "Renata Glasc", "Renekton", "Sejuani",
+    "Sett", "Shen", "Sion", "Sivir", "Swain",
+    "Taric", "Thresh", "Trundle", "Varus", "Vayne",
+    "Vi", "Volibear", "Warwick", "Xayah", "Zac",
 ];
 
 
