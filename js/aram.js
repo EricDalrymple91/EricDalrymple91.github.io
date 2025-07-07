@@ -249,30 +249,30 @@ const EricTop50 = [
 ]
 
 const MickeyTop50 = [
-    "Ahri", "Alistar", "Amumu", "Anivia", "Annie",
+    "Ahri", "Alistar", "Ambessa", "Anivia", "Annie",
     "Ashe", "Braum", "Caitlyn", "Corki", "Darius",
-    "Galio", "Gnar", "Gwen", "Illaoi", "Jax",
-    "Jinx", "Kai'Sa", "Kindred", "Lee Sin", "Leona",
-    "Lulu", "Milio", "Mordekaiser", "Morgana", "Nautilus",
-    "Neeko", "Orianna", "Ornn", "Poppy", "Quinn",
-    "Rell", "Renata Glasc", "Renekton", "Sejuani", "Sett",
-    "Sion", "Sivir", "Tahm Kench", "Taric", "Thresh",
-    "Tristana", "Twisted Fate", "Twitch", "Varus", "Vayne",
-    "Vi", "Volibear", "Xayah", "Zac", "Zilean",
+    "Draven", "Galio", "Gnar", "Gragas", "Illaoi",
+    "Jax", "Kai'Sa", "Kindred", "Lee Sin", "Leona",
+    "Lulu", "Milio", "Morgana", "Nautilus", "Neeko",
+    "Orianna", "Ornn", "Poppy", "Quinn", "Rell",
+    "Renata Glasc", "Renekton", "Sejuani", "Sett", "Sion",
+    "Sivir", "Tahm Kench", "Taric", "Thresh", "Tristana",
+    "Twisted Fate", "Twitch", "Varus", "Vayne", "Vi",
+    "Volibear", "Xayah", "Xin Zhao", "Zac", "Zilean",
 ];
 
 
 const CaitlinTop50 = [
-    "Ahri", "Anivia", "Annie", "Ashe", "Brand",
-    "Caitlyn", "Cho'Gath", "Elise", "Graves", "Gwen",
-    "Hecarim", "Jinx", "Kai'Sa", "Karma", "Kindred",
-    "Lillia", "Lulu", "Lux", "Malphite", "Maokai",
-    "Mel", "Milio", "Miss Fortune", "Nautilus", "Neeko",
-    "Poppy", "Quinn", "Rell", "Renekton", "Senna",
-    "Seraphine", "Sivir", "Smolder", "Taric", "Teemo",
-    "Thresh", "Tristana", "Trundle", "Twisted Fate", "Twitch",
-    "Varus", "Vayne", "Veigar", "Vel'Koz", "Volibear",
-    "Warwick", "Xayah", "Xerath", "Zac", "Zyra",
+    "Ahri", "Annie", "Ashe", "Blitzcrank", "Brand",
+    "Caitlyn", "Cho'Gath", "Elise", "Galio", "Graves",
+    "Gwen", "Hecarim", "Irelia", "Kai'Sa", "Karma",
+    "Karthus", "Kha'Zix", "Kindred", "Lillia", "Lulu",
+    "Lux", "Malphite", "Maokai", "Mel", "Milio",
+    "Miss Fortune", "Morgana", "Nautilus", "Neeko", "Pantheon",
+    "Poppy", "Senna", "Seraphine", "Shen", "Sivir",
+    "Smolder", "Tahm Kench", "Taric", "Teemo", "Tristana",
+    "Trundle", "Twisted Fate", "Varus", "Vayne", "Vel'Koz",
+    "Vi", "Volibear", "Warwick", "Xayah", "Zyra",
 ];
 
 const BenTop50 = [
@@ -302,16 +302,16 @@ const PatTop50 = [
 ];
 
 const HogiTop50 = [
-    "Ahri", "Amumu", "Anivia", "Blitzcrank", "Brand",
-    "Caitlyn", "Cho'Gath", "Fizz", "Galio", "Gangplank",
-    "Gnar", "Gragas", "Jarvan IV", "Jhin", "Jinx",
-    "Lissandra", "Lulu", "Lux", "Malzahar", "Maokai",
-    "Mel", "Miss Fortune", "Mordekaiser", "Morgana", "Nami",
-    "Nautilus", "Orianna", "Ornn", "Pyke", "Renata Glasc",
-    "Rumble", "Samira", "Sejuani", "Sett", "Shaco",
-    "Shen", "Soraka", "Swain", "Syndra", "Thresh",
-    "Twisted Fate", "Vayne", "Veigar", "Vel'Koz", "Vex",
-    "Xerath", "Zac", "Zilean", "Zoe", "Zyra",
+    "Ahri", "Anivia", "Blitzcrank", "Brand", "Caitlyn",
+    "Cho'Gath", "Corki", "Ekko", "Ezreal", "Fiddlesticks",
+    "Fizz", "Galio", "Gangplank", "Gnar", "Gragas",
+    "Heimerdinger", "Janna", "Jarvan IV", "Karma", "Kassadin",
+    "Kha'Zix", "LeBlanc", "Lissandra", "Lulu", "Lux",
+    "Malphite", "Malzahar", "Maokai", "Mel", "Morgana",
+    "Nami", "Nautilus", "Orianna", "Ornn", "Poppy",
+    "Pyke", "Renata Glasc", "Sejuani", "Sett", "Shaco",
+    "Shen", "Soraka", "Syndra", "Thresh", "Twisted Fate",
+    "Veigar", "Xayah", "Zac", "Zilean", "Zoe",
 ];
 
 const ToriTop50 = [
@@ -340,16 +340,16 @@ const DavidTop50 = [
 ];
 
 const NateTop50 = [
-    "Ahri", "Anivia", "Ashe", "Aurora", "Braum",
-    "Caitlyn", "Cho'Gath", "Corki", "Darius", "Dr. Mundo",
-    "Galio", "Garen", "Gnar", "Illaoi", "Jarvan IV",
-    "Jax", "K'Sante", "Kai'Sa", "Karma", "Kindred",
-    "Kog'Maw", "Leona", "Lulu", "Lux", "Maokai",
-    "Milio", "Morgana", "Neeko", "Orianna", "Poppy",
-    "Quinn", "Rell", "Renata Glasc", "Renekton", "Sejuani",
-    "Sett", "Shen", "Sion", "Sivir", "Swain",
-    "Taric", "Thresh", "Trundle", "Varus", "Vayne",
-    "Vi", "Volibear", "Warwick", "Xayah", "Zac",
+    "Aatrox", "Ahri", "Ambessa", "Anivia", "Ashe",
+    "Aurora", "Blitzcrank", "Braum", "Caitlyn", "Darius",
+    "Ekko", "Galio", "Garen", "Jax", "K'Sante",
+    "Kai'Sa", "Karma", "Kennen", "Kindred", "Leona",
+    "Lulu", "Maokai", "Milio", "Neeko", "Orianna",
+    "Ornn", "Poppy", "Quinn", "Rell", "Renata Glasc",
+    "Renekton", "Sejuani", "Seraphine", "Sett", "Shen",
+    "Swain", "Taric", "Thresh", "Tristana", "Trundle",
+    "Twisted Fate", "Varus", "Vayne", "Vi", "Volibear",
+    "Warwick", "Xayah", "Yone", "Zac", "Zyra",
 ];
 
 
