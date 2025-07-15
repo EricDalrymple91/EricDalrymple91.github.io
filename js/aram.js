@@ -239,12 +239,12 @@ const EricTop50 = [
     "Aatrox", "Alistar", "Ambessa", "Aurelion Sol", "Bel'Veth",
     "Brand", "Briar", "Cho'Gath", "Darius", "Dr. Mundo",
     "Fiora", "Fizz", "Garen", "Gnar", "Gragas",
-    "Gwen", "Illaoi", "Jax", "Kennen", "Lillia",
-    "Lux", "Malphite", "Master Yi", "Mel", "Mordekaiser",
-    "Nasus", "Olaf", "Quinn", "Renekton", "Rumble",
-    "Sejuani", "Sett", "Shen", "Shyvana", "Sion",
-    "Skarner", "Sylas", "Tahm Kench", "Trundle", "Tryndamere",
-    "Urgot", "Vayne", "Veigar", "Vel'Koz", "Volibear",
+    "Gwen", "Hwei", "Illaoi", "Jax", "Kennen",
+    "Lillia", "Lux", "Malphite", "Master Yi", "Mel",
+    "Mordekaiser", "Nasus", "Nocturne", "Olaf", "Quinn",
+    "Renekton", "Rumble", "Sett", "Shen", "Sion",
+    "Skarner", "Tahm Kench", "Trundle", "Tryndamere", "Urgot",
+    "Vayne", "Veigar", "Vel'Koz", "Vex", "Volibear",
     "Warwick", "Wukong", "Yasuo", "Yorick", "Zac",
 ]
 
@@ -315,15 +315,16 @@ const HogiTop50 = [
 ];
 
 const ToriTop50 = [
-    "Ahri", "Amumu", "Anivia", "Annie", "Ashe",
-    "Aurelion Sol", "Azir", "Caitlyn", "Cassiopeia", "Cho'Gath",
-    "Diana", "Draven", "Fiddlesticks", "Illaoi", "Jinx",
-    "Karma", "Leona", "Lillia", "Lissandra", "Lulu",
-    "Lux", "Malphite", "Milio", "Miss Fortune", "Mordekaiser",
+    "Ahri", "Amumu", "Anivia", "Annie", "Aurelion Sol",
+    "Azir", "Brand", "Caitlyn", "Cassiopeia", "Cho'Gath",
+    "Diana", "Draven", "Fiddlesticks", "Illaoi", "Janna",
+    "Jinx", "Karma", "Leona", "Lillia", "Lissandra",
+    "Lulu", "Lux", "Malphite", "Milio", "Miss Fortune",
     "Morgana", "Nami", "Neeko", "Nidalee", "Nunu & Willump",
-    "Orianna", "Renata Glasc", "Senna", "Seraphine", "Sona",
-    "Swain", "Syndra", "Taric", "Thresh", "Veigar",
+    "Orianna", "Renata Glasc", "Seraphine", "Sona", "Soraka",
+    "Swain", "Syndra", "Teemo", "Thresh", "Veigar",
     "Vel'Koz", "Vex", "Vi", "Viego", "Vladimir",
+    "Xerath", "Ziggs", "Zilean", "Zoe", "Zyra",
 ];
 
 const DavidTop50 = [
