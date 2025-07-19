@@ -178,6 +178,8 @@ function getChampionTop50BySummoner(summoner) {
             return DavidTop50;
         case "Nate":
             return NateTop50;
+        case "Dodger":
+            return DodgerTop50;
         default:
             return leagueOfLegendsChampions;
     }
@@ -277,15 +279,15 @@ const CaitlinTop50 = [
 
 const BenTop50 = [
     "Aatrox", "Ambessa", "Amumu", "Aurora", "Azir",
-    "Blitzcrank", "Braum", "Briar", "Darius", "Dr. Mundo",
+    "Brand", "Braum", "Briar", "Darius", "Dr. Mundo",
     "Ekko", "Galio", "Gnar", "Gwen", "Illaoi",
-    "Irelia", "Jarvan IV", "Jax", "Jayce", "Kayn",
-    "Kennen", "Lee Sin", "Leona", "Malphite", "Milio",
-    "Mordekaiser", "Nautilus", "Ornn", "Pantheon", "Poppy",
-    "Qiyana", "Quinn", "Rek'Sai", "Rell", "Renekton",
-    "Riven", "Sett", "Shen", "Skarner", "Sylas",
-    "Tahm Kench", "Taliyah", "Talon", "Thresh", "Vi",
-    "Volibear", "Wukong", "Xerath", "Yone", "Zac",
+    "Irelia", "Jarvan IV", "Jax", "Kayn", "Kennen",
+    "Lee Sin", "Leona", "Lissandra", "Malphite", "Milio",
+    "Nautilus", "Neeko", "Olaf", "Ornn", "Pantheon",
+    "Poppy", "Qiyana", "Quinn", "Rek'Sai", "Rell",
+    "Renekton", "Riven", "Sett", "Shen", "Skarner",
+    "Swain", "Tahm Kench", "Taliyah", "Thresh", "Vex",
+    "Vi", "Volibear", "Wukong", "Yone", "Zac",
 ];
 
 const PatTop50 = [
@@ -352,6 +354,19 @@ const NateTop50 = [
     "Tristana", "Trundle", "Varus", "Vayne", "Vi",
     "Volibear", "Xayah", "Zac", "Ziggs", "Zilean",
 ];
+
+const DodgerTop50 = [
+    "Ahri", "Annie", "Bard", "Blitzcrank", "Brand",
+    "Caitlyn", "Camille", "Darius", "Diana", "Dr. Mundo",
+    "Ekko", "Ezreal", "Fiddlesticks", "Fiora", "Fizz",
+    "Galio", "Gwen", "Heimerdinger", "Illaoi", "Irelia",
+    "Jayce", "Jhin", "Jinx", "K'Sante", "Kai'Sa",
+    "Kalista", "Katarina", "Kayn", "Kennen", "Lee Sin",
+    "Lucian", "Lux", "Malphite", "Mel", "Miss Fortune",
+    "Morgana", "Nasus", "Nautilus", "Neeko", "Orianna",
+    "Poppy", "Pyke", "Qiyana", "Riven", "Ryze",
+    "Samira", "Shaco", "Sion", "Vex", "Yasuo",
+]
 
 
 // Owned champs
