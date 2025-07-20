@@ -344,15 +344,15 @@ const DavidTop50 = [
 
 const NateTop50 = [
     "Ahri", "Ambessa", "Amumu", "Anivia", "Ashe",
-    "Blitzcrank", "Braum", "Caitlyn", "Darius", "Galio",
-    "Garen", "Graves", "Jax", "K'Sante", "Kai'Sa",
-    "Karma", "Kennen", "Kindred", "Leona", "Lulu",
-    "Maokai", "Milio", "Morgana", "Nasus", "Neeko",
-    "Orianna", "Ornn", "Poppy", "Quinn", "Rakan",
+    "Aurora", "Braum", "Caitlyn", "Darius", "Galio",
+    "Jax", "K'Sante", "Kai'Sa", "Karma", "Kennen",
+    "Kindred", "Leona", "Lulu", "Maokai", "Milio",
+    "Morgana", "Nasus", "Neeko", "Olaf", "Orianna",
+    "Ornn", "Pantheon", "Poppy", "Quinn", "Rakan",
     "Rell", "Renata Glasc", "Sejuani", "Seraphine", "Sett",
     "Shen", "Soraka", "Swain", "Taric", "Thresh",
     "Tristana", "Trundle", "Varus", "Vayne", "Vi",
-    "Volibear", "Xayah", "Zac", "Ziggs", "Zilean",
+    "Volibear", "Xayah", "Xin Zhao", "Zac", "Zilean",
 ];
 
 const DodgerTop50 = [
