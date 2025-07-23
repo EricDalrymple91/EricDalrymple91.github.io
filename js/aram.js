@@ -180,6 +180,8 @@ function getChampionTop50BySummoner(summoner) {
             return NateTop50;
         case "Dodger":
             return DodgerTop50;
+        case "Liam":
+            return LiamTop50;
         default:
             return leagueOfLegendsChampions;
     }
@@ -366,6 +368,19 @@ const DodgerTop50 = [
     "Morgana", "Nasus", "Nautilus", "Neeko", "Orianna",
     "Poppy", "Pyke", "Qiyana", "Riven", "Ryze",
     "Samira", "Shaco", "Sion", "Vex", "Yasuo",
+]
+
+const LiamTop50 = [
+    "Ahri", "Anivia", "Blitzcrank", "Brand", "Caitlyn",
+    "Cho'Gath", "Corki", "Ekko", "Ezreal", "Fiddlesticks",
+    "Fizz", "Galio", "Gangplank", "Gnar", "Gragas",
+    "Heimerdinger", "Janna", "Jarvan IV", "Karma", "Kassadin",
+    "Kennen", "Kha'Zix", "LeBlanc", "Leona", "Lissandra",
+    "Lulu", "Lux", "Malphite", "Malzahar", "Maokai",
+    "Mel", "Morgana", "Nami", "Nautilus", "Orianna",
+    "Ornn", "Renata Glasc", "Sejuani", "Sett", "Shaco",
+    "Shen", "Soraka", "Syndra", "Thresh", "Twisted Fate",
+    "Veigar", "Xayah", "Zac", "Zilean", "Zoe",
 ]
 
 
