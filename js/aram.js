@@ -253,15 +253,15 @@ const EricTop50 = [
 ]
 
 const MickeyTop50 = [
-    "Ahri", "Alistar", "Ambessa", "Anivia", "Annie",
-    "Ashe", "Braum", "Caitlyn", "Corki", "Darius",
-    "Draven", "Galio", "Gnar", "Gragas", "Illaoi",
-    "Jax", "Kai'Sa", "Kindred", "Lee Sin", "Leona",
-    "Lulu", "Milio", "Morgana", "Nautilus", "Neeko",
-    "Orianna", "Ornn", "Poppy", "Quinn", "Rell",
-    "Renata Glasc", "Renekton", "Sejuani", "Sett", "Sion",
-    "Sivir", "Tahm Kench", "Taric", "Thresh", "Tristana",
-    "Twisted Fate", "Twitch", "Varus", "Vayne", "Vi",
+    "Ambessa", "Anivia", "Annie", "Ashe", "Braum",
+    "Caitlyn", "Corki", "Ezreal", "Gnar", "Gragas",
+    "Illaoi", "Jarvan IV", "Jax", "K'Sante", "Kai'Sa",
+    "Kennen", "Kindred", "Kog'Maw", "Lee Sin", "Leona",
+    "Lucian", "Lulu", "Milio", "Miss Fortune", "Morgana",
+    "Nami", "Nasus", "Orianna", "Ornn", "Pantheon",
+    "Poppy", "Quinn", "Rell", "Renata Glasc", "Renekton",
+    "Sejuani", "Sivir", "Smolder", "Tahm Kench", "Taric",
+    "Thresh", "Tristana", "Twitch", "Varus", "Vayne",
     "Volibear", "Xayah", "Xin Zhao", "Zac", "Zilean",
 ];
 
@@ -346,14 +346,14 @@ const DavidTop50 = [
 
 const NateTop50 = [
     "Ahri", "Ambessa", "Amumu", "Anivia", "Ashe",
-    "Aurora", "Braum", "Caitlyn", "Darius", "Galio",
-    "Jax", "K'Sante", "Kai'Sa", "Karma", "Kennen",
-    "Kindred", "Leona", "Lulu", "Maokai", "Milio",
-    "Morgana", "Nasus", "Neeko", "Olaf", "Orianna",
-    "Ornn", "Pantheon", "Poppy", "Quinn", "Rakan",
-    "Rell", "Renata Glasc", "Sejuani", "Seraphine", "Sett",
-    "Shen", "Soraka", "Swain", "Taric", "Thresh",
-    "Tristana", "Trundle", "Varus", "Vayne", "Vi",
+    "Blitzcrank", "Braum", "Caitlyn", "Darius", "Dr. Mundo",
+    "Galio", "Hecarim", "Jax", "K'Sante", "Kai'Sa",
+    "Karma", "Kindred", "Leona", "Lulu", "Maokai",
+    "Milio", "Morgana", "Naafiri", "Nami", "Nasus",
+    "Neeko", "Olaf", "Ornn", "Pantheon", "Poppy",
+    "Quinn", "Rakan", "Rell", "Renata Glasc", "Renekton",
+    "Sejuani", "Seraphine", "Shen", "Tahm Kench", "Taric",
+    "Thresh", "Tristana", "Varus", "Vayne", "Vi",
     "Volibear", "Xayah", "Xin Zhao", "Zac", "Zilean",
 ];
 
