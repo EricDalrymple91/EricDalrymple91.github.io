@@ -1,3 +1,30 @@
+function showToast(message, type = 'info') {
+    const toastContainer = document.getElementById('toast-container');
+
+    const toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.textContent = message;
+
+    if (type === 'error') {
+        toast.classList.add('error');
+    }
+
+    toastContainer.appendChild(toast);
+
+    // Show the toast
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 100); // Small delay for the animation to start
+
+    // Hide and remove the toast after a few seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toastContainer.removeChild(toast);
+        }, 500); // Match CSS transition duration
+    }, 3000); // Toast visible for 3 seconds
+}
+
 function roll() {
     const summoner1 = document.getElementById('summoner1').value;
     const summoner2 = document.getElementById('summoner2').value;
@@ -45,6 +72,12 @@ function roll() {
         [summoners[2]]: getChampionTop50BySummoner(summoners[2]),
     };
 
+    const combinedChampionPools = championPoolBySummoner[summoners[0]].concat(
+        championPoolBySummoner[summoners[1]].concat(
+            championPoolBySummoner[summoners[2]]
+        )
+    )
+
     const selectedChampPool = [];
 
     const bannedChampions = [
@@ -52,13 +85,12 @@ function roll() {
         "Jax",  // 9/6/25
     ];
 
-    summoners.forEach((summoner, index) => {
-        let championPool = championPoolBySummoner[summoner];
-        let championPoolLength = championPool.length;
-        let targetLength = 3 * (index + 1);
-        while (selectedChampPool.length < targetLength) {
-            const randomIndex = Math.floor(Math.random() * championPoolLength);
-            const randomChampion = championPool[randomIndex];
+    function selectChamp(_championPool, _targetLength) {
+        let _selections = [];
+        let _championPoolLength = _championPool.length;
+        while (selectedChampPool.length < _targetLength) {
+            const randomIndex = Math.floor(Math.random() * _championPoolLength);
+            const randomChampion = _championPool[randomIndex];
 
             if (bannedChampions.includes(randomChampion)) {
                 continue;
@@ -68,22 +100,32 @@ function roll() {
                 continue;
             }
             selectedChampPool.push(randomChampion);
+            _selections.push(randomChampion);
         }
+        return _selections;
+    } 
+
+    summoners.forEach((summoner, index) => {
+        selectChamp(championPoolBySummoner[summoner], 3 * (index + 1))
     })
     selectedChampPool.sort()
 
     // Create an object that maps the champ and those who own it
-    let ownershipByChamp = {};
-    selectedChampPool.forEach(champ => {
-        ownershipByChamp[champ] = [];
-        summoners.forEach(summoner => {
-            if (getChampionTop50BySummoner(summoner).includes(champ)) {
-                ownershipByChamp[champ].push(true);
-            } else {
-                ownershipByChamp[champ].push(false);
-            }
+    function getOwnershipByChamp() {
+        let _ownershipByChamp = {};
+        selectedChampPool.forEach(champ => {
+            _ownershipByChamp[champ] = [];
+            summoners.forEach(summoner => {
+                if (getChampionTop50BySummoner(summoner).includes(champ)) {
+                    _ownershipByChamp[champ].push(true);
+                } else {
+                    _ownershipByChamp[champ].push(false);
+                }
+            });
         });
-    });
+        return _ownershipByChamp;
+    }
+    let ownershipByChamp = getOwnershipByChamp();
 
     // Create the output display table
     const table = document.createElement("table");
@@ -145,13 +187,59 @@ function roll() {
 
             if (index === selectedChampPool.length - 1) {
                 // Add copy champs list button
-                const copyChampsListButton = document.createElement("button");
-                copyChampsListButton.textContent = "Copy Champion Pool";
-                copyChampsListButton.classList.add("roll-button");
-                copyChampsListButton.addEventListener("click", () => {
-                    copyChampPoolName(selectedChampPool);
+                // const copyChampsListButton = document.createElement("button");
+                // copyChampsListButton.textContent = "Copy Champion Pool";
+                // copyChampsListButton.classList.add("roll-button");
+                // copyChampsListButton.addEventListener("click", () => {
+                //     copyChampPoolName(selectedChampPool);
+                // });
+                // rollsSection.appendChild(copyChampsListButton);
+
+                // Add take shot button
+                const takeShotButton = document.createElement("button");
+                takeShotButton.textContent = "Take a Shot";
+                takeShotButton.classList.add("roll-button");
+                takeShotButton.addEventListener("click", () => {
+                    if (selectedChampPool.length >= 12) {
+                        showToast('Already took your max shots. Maybe suck one instead?', 'error')                        
+                        return
+                    }
+
+                    _shotChamp = selectChamp(
+                        combinedChampionPools,
+                        selectedChampPool.length + 1,
+                    )[0]
+
+                    ownershipByChamp = getOwnershipByChamp();
+
+                    setTimeout(() => {
+                        const _row = document.createElement("tr");
+
+                        const _iconCell = document.createElement("td");
+                        _iconCell.classList.add("image-cell");
+                        const _icon = document.createElement("img");
+                        _icon.src = "../images/lol_champion_icons/" + _shotChamp.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() + ".png";
+                        _icon.alt = _shotChamp + "icon";
+                        _icon.height = 75;
+                        _icon.width = 75;
+                        _iconCell.appendChild(_icon);
+                        _row.appendChild(_iconCell);
+
+                        const _champCell = document.createElement("td");
+                        _champCell.textContent = _shotChamp + " " + "🥃";
+                        _row.appendChild(_champCell);
+
+                        ownershipByChamp[_shotChamp].forEach(val => {
+                            const _cell = document.createElement("td");
+                            _cell.textContent = val ? "✓" : "✗";
+                            _cell.style.color = val ? "#4CAF50" : "#F44336"; // green or red
+                            _row.appendChild(_cell);
+                        });
+
+                        tbody.appendChild(_row);
+                    }, 300);
                 });
-                rollsSection.appendChild(copyChampsListButton);
+                rollsSection.appendChild(takeShotButton);
             }
 
         }, index * 300); // 300ms delay between each row
