@@ -346,6 +346,25 @@ a {
 	outline: none;
 }
 
+.omit-champ-select {
+	width: 250px;
+}
+
+.omit-champ-select select {
+	width: 100%;
+	font-size: 22px;
+	background-color: #eab676;
+	padding: 10px;
+}
+
+.omit-champ-select select:hover {
+	background-color: #E0645C;
+}
+
+.omit-champ-select select:focus {
+	outline: none;
+}
+
 .roll-button {
 	margin-top: 20px;
 	margin-bottom: 10px;
@@ -529,4 +548,19 @@ button:active {
 
 .toast.error {
     background-color: #e74c3c;
+}
+
+.omitted-champ {
+  font-size: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 6px 0;
+}
+
+.omitted-champ span:last-child {
+  cursor: pointer;
+  color: red;
 }
