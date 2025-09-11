@@ -33,6 +33,9 @@ function roll() {
     const rollsSection = document.getElementById("rollsSection");
     rollsSection.innerHTML = "";  // clear previous content
 
+    const postRollsSection = document.getElementById("postRollsSection");
+    postRollsSection.innerHTML = "";  // clear previous content
+
     // Check to make sure all three summoners were selected
     if (
         summoner1 === "None" ||
@@ -72,12 +75,6 @@ function roll() {
         [summoners[2]]: getChampionTop50BySummoner(summoners[2]),
     };
 
-    const combinedChampionPools = championPoolBySummoner[summoners[0]].concat(
-        championPoolBySummoner[summoners[1]].concat(
-            championPoolBySummoner[summoners[2]]
-        )
-    )
-
     const selectedChampPool = [];
 
     const bannedChampions = [
@@ -103,7 +100,7 @@ function roll() {
             _selections.push(randomChampion);
         }
         return _selections;
-    } 
+    }
 
     summoners.forEach((summoner, index) => {
         selectChamp(championPoolBySummoner[summoner], 3 * (index + 1))
@@ -195,18 +192,51 @@ function roll() {
                 // });
                 // rollsSection.appendChild(copyChampsListButton);
 
+                // Add the summoner select dropdown
+                const summonerDiv = document.createElement("div");
+                summonerDiv.classList.add("summoner-select");
+                const select = document.createElement("select");
+                select.style.marginTop = "20px";
+                select.id = "shotSummoner";
+                const options = [
+                    { value: "None", text: "Select Summoner:" },
+                    { disabled: true, text: "──────────" },
+                    { value: summoner1, text: summoner1 },
+                    { value: summoner2, text: summoner2 },
+                    { value: summoner3, text: summoner3 },
+                ];
+                options.forEach(opt => {
+                    const optionEl = document.createElement("option");
+                    if (opt.disabled) {
+                        optionEl.disabled = true;
+                    } else {
+                        optionEl.value = opt.value;
+                    }
+                    optionEl.textContent = opt.text;
+                    select.appendChild(optionEl);
+                });
+                summonerDiv.appendChild(select);
+                postRollsSection.append(summonerDiv)
+
                 // Add take shot button
                 const takeShotButton = document.createElement("button");
                 takeShotButton.textContent = "Take a Shot";
                 takeShotButton.classList.add("roll-button");
                 takeShotButton.addEventListener("click", () => {
                     if (selectedChampPool.length >= 12) {
-                        showToast('Already took your max shots. Maybe suck one instead?', 'error')                        
+                        showToast('Already took your max shots. Maybe suck one instead?', 'error')
+                        return
+                    }
+
+                    _shotSummoner = document.getElementById('shotSummoner').value;
+
+                    if (![summoner1, summoner2, summoner3].includes(_shotSummoner)) {
+                        showToast('Select a summoner first, not that hard...', 'error')
                         return
                     }
 
                     _shotChamp = selectChamp(
-                        combinedChampionPools,
+                        championPoolBySummoner[_shotSummoner],
                         selectedChampPool.length + 1,
                     )[0]
 
@@ -226,7 +256,7 @@ function roll() {
                         _row.appendChild(_iconCell);
 
                         const _champCell = document.createElement("td");
-                        _champCell.textContent = _shotChamp + " " + "🥃";
+                        _champCell.textContent = _shotChamp + " " + "🥃" + " " + getEmoji(_shotSummoner);
                         _row.appendChild(_champCell);
 
                         ownershipByChamp[_shotChamp].forEach(val => {
@@ -239,8 +269,10 @@ function roll() {
                         tbody.appendChild(_row);
                     }, 300);
                 });
-                rollsSection.appendChild(takeShotButton);
+                postRollsSection.appendChild(takeShotButton);
             }
+
+
 
         }, index * 300); // 300ms delay between each row
     });
@@ -299,6 +331,35 @@ function getChampionPoolBySummoner(summoner) {
             return NateChampions;
         default:
             return leagueOfLegendsChampions;
+    }
+}
+
+function getEmoji(summoner) {
+    switch (summoner) {
+        case "Eric":
+            return "🦅";
+        case "Mickey":
+            return "🏹";
+        case "Caitlin":
+            return "🌸";
+        case "Ben":
+            return "🐻";
+        case "Pat":
+            return "🌊";
+        case "Hogi":
+            return "⏰";
+        case "Tori":
+            return "💎";
+        case "David":
+            return "🦁";
+        case "Nate":
+            return "🛡️";
+        case "Dodger":
+            return "⚡";
+        case "Liam":
+            return "🎸";
+        default:
+            return "🃏";
     }
 }
 
