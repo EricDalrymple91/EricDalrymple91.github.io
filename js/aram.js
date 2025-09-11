@@ -87,8 +87,6 @@ function roll() {
         .map(el => el.dataset.champion);
     bannedChampions.push(...omitSelections);
 
-    console.log(omitSelections)
-
     function selectChamp(_championPool, _targetLength) {
         let _selections = [];
         let _championPoolLength = _championPool.length;
@@ -287,7 +285,7 @@ function roll() {
 
 
 function handleOmitChamp(selectElement) {
-    if (document.querySelectorAll(".omitted-champ").length >= 6) {
+    if (document.querySelectorAll(".omitted-champ").length >= 9) {
         showToast('You can only omit six champions. Crazy how you cannot seem to get it.', 'error')
         // Reset dropdown back to "Omit Champion:"
         selectElement.value = "None"
@@ -295,6 +293,14 @@ function handleOmitChamp(selectElement) {
     }
 
     const champ = selectElement.value;
+
+    // Ignore if the same champ is clicked again
+    if (Array.from(document.querySelectorAll(".omitted-champ")).map(el => el.dataset.champion).includes(champ)) {
+        // Reset dropdown back to "Omit Champion:"
+        selectElement.value = "None"
+        return
+    }
+
     if (champ !== "None") {
         const log = document.getElementById("omitLog");
 
@@ -385,11 +391,11 @@ function getChampionPoolBySummoner(summoner) {
 function getEmoji(summoner) {
     switch (summoner) {
         case "Eric":
-            return "🦅";
+            return "🥊";
         case "Mickey":
             return "🏹";
         case "Caitlin":
-            return "🌸";
+            return "📚";
         case "Ben":
             return "🐻";
         case "Pat":
@@ -399,7 +405,7 @@ function getEmoji(summoner) {
         case "Tori":
             return "💎";
         case "David":
-            return "🦁";
+            return "🐀";
         case "Nate":
             return "🛡️";
         case "Dodger":
@@ -407,7 +413,7 @@ function getEmoji(summoner) {
         case "Liam":
             return "🎸";
         default:
-            return "🃏";
+            return "🌌";
     }
 }
 
