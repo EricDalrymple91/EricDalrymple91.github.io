@@ -82,6 +82,13 @@ function roll() {
         "Jax",  // 9/6/25
     ];
 
+    // Add omit list to banned champions
+    const omitSelections = Array.from(document.querySelectorAll(".omitted-champ"))
+        .map(el => el.dataset.champion);
+    bannedChampions.push(...omitSelections);
+
+    console.log(omitSelections)
+
     function selectChamp(_championPool, _targetLength) {
         let _selections = [];
         let _championPoolLength = _championPool.length;
@@ -279,6 +286,47 @@ function roll() {
 }
 
 
+function handleOmitChamp(selectElement) {
+    if (document.querySelectorAll(".omitted-champ").length >= 6) {
+        showToast('You can only omit six champions. Crazy how you cannot seem to get it.', 'error')
+        // Reset dropdown back to "Omit Champion:"
+        selectElement.value = "None"
+        return
+    }
+
+    const champ = selectElement.value;
+    if (champ !== "None") {
+        const log = document.getElementById("omitLog");
+
+        // Create line container
+        const line = document.createElement("div");
+        line.classList.add("omitted-champ");
+        line.dataset.champion = champ;
+
+        // Champion text
+        const text = document.createElement("span");
+        text.textContent = champ;
+
+        // Single ❌ button
+        const closeBtn = document.createElement("span");
+        closeBtn.textContent = "❌";
+        closeBtn.classList.add("remove-btn");
+
+        // Remove this line when clicked
+        closeBtn.addEventListener("click", () => {
+            log.removeChild(line);
+        });
+
+        line.appendChild(text);
+        line.appendChild(closeBtn);
+        log.appendChild(line);
+
+        // Reset dropdown back to "Omit Champion:"
+        selectElement.value = "None"
+    }
+}
+
+
 function getChampionTop50BySummoner(summoner) {
     switch (summoner) {
         case "Eric":
@@ -370,22 +418,29 @@ function copyChampPoolName(champPool) {
 
 
 const leagueOfLegendsChampions = [
-    "Aatrox", "Ahri", "Akali", "Akshan", "Alistar", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "Aurelion Sol", "Azir",
-    "Bard", "Bel'Veth", "Blitzcrank", "Brand", "Braum", "Briar", "Caitlyn", "Camille", "Cassiopeia", "Cho'Gath", "Corki",
-    "Darius", "Diana", "Dr. Mundo", "Draven", "Ekko", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz",
-    "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", "Hecarim", "Heimerdinger", "Illaoi", "Irelia",
-    "Ivern", "Janna", "Jarvan IV", "Jax", "Jayce", "Jhin", "Jinx", "Kai'Sa", "Kalista", "Karma", "Karthus", "Kassadin",
-    "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Kindred", "Kled", "Kog'Maw", "K'Sante", "LeBlanc", "Lee Sin",
-    "Leona", "Lillia", "Lissandra", "Lucian", "Lulu", "Lux", "Malphite", "Malzahar", "Maokai", "Master Yi", "Milio",
-    "Miss Fortune", "Mordekaiser", "Morgana", "Naafiri", "Nami", "Nasus", "Nautilus", "Neeko", "Nidalee", "Nilah",
-    "Nocturne", "Nunu & Willump", "Olaf", "Orianna", "Ornn", "Pantheon", "Poppy", "Pyke", "Qiyana", "Quinn", "Rakan",
-    "Rammus", "Rek'Sai", "Rell", "Renata Glasc", "Renekton", "Rengar", "Riven", "Rumble", "Ryze", "Samira", "Sejuani",
-    "Senna", "Seraphine", "Sett", "Shaco", "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Sona", "Soraka",
-    "Swain", "Sylas", "Syndra", "Tahm Kench", "Taliyah", "Talon", "Taric", "Teemo", "Thresh", "Tristana", "Trundle",
-    "Tryndamere", "Twisted Fate", "Twitch", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Vel'Koz", "Vex", "Vi", "Viego",
-    "Viktor", "Vladimir", "Volibear", "Warwick", "Wukong", "Xayah", "Xerath", "Xin Zhao", "Yasuo", "Yone", "Yorick",
-    "Yuumi", "Zac", "Zed", "Zeri", "Ziggs", "Zilean", "Zoe", "Zyra",
-    "Mel", "Smolder", "Aurora", "Ambessa", "Hwei",
+    "Aatrox", "Ahri", "Akali", "Akshan", "Alistar", "Ambessa", "Amumu", "Anivia",
+    "Annie", "Aphelios", "Ashe", "Aurora", "Aurelion Sol", "Azir", "Bard",
+    "Bel'Veth", "Blitzcrank", "Brand", "Braum", "Briar", "Caitlyn", "Camille",
+    "Cassiopeia", "Cho'Gath", "Corki", "Darius", "Diana", "Dr. Mundo", "Draven",
+    "Ekko", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio",
+    "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", "Hecarim",
+    "Heimerdinger", "Hwei", "Illaoi", "Irelia", "Ivern", "Janna", "Jarvan IV", "Jax",
+    "Jayce", "Jhin", "Jinx", "Kai'Sa", "Kalista", "Karma", "Karthus", "Kassadin",
+    "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Kindred", "Kled", "Kog'Maw",
+    "K'Sante", "LeBlanc", "Lee Sin", "Leona", "Lillia", "Lissandra", "Lucian",
+    "Lulu", "Lux", "Malphite", "Malzahar", "Maokai", "Master Yi", "Mel", "Milio",
+    "Miss Fortune", "Mordekaiser", "Morgana", "Naafiri", "Nami", "Nasus",
+    "Nautilus", "Neeko", "Nidalee", "Nilah", "Nocturne", "Nunu & Willump", "Olaf",
+    "Orianna", "Ornn", "Pantheon", "Poppy", "Pyke", "Qiyana", "Quinn", "Rakan",
+    "Rammus", "Rek'Sai", "Rell", "Renata Glasc", "Renekton", "Rengar", "Riven",
+    "Rumble", "Ryze", "Samira", "Sejuani", "Senna", "Seraphine", "Sett", "Shaco",
+    "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Smolder", "Sona",
+    "Soraka", "Swain", "Sylas", "Syndra", "Tahm Kench", "Taliyah", "Talon", "Taric",
+    "Teemo", "Thresh", "Tristana", "Trundle", "Tryndamere", "Twisted Fate", "Twitch",
+    "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Vel'Koz", "Vex", "Vi", "Viego",
+    "Viktor", "Vladimir", "Volibear", "Warwick", "Wukong", "Xayah", "Xerath",
+    "Xin Zhao", "Yasuo", "Yone", "Yorick", "Yuumi", "Yunara", "Zac", "Zed", "Zeri",
+    "Ziggs", "Zilean", "Zoe", "Zyra"
 ];
 
 // Top 50
