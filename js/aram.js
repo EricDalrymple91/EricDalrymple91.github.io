@@ -276,9 +276,6 @@ function roll() {
                 });
                 postRollsSection.appendChild(takeShotButton);
             }
-
-
-
         }, index * 300); // 300ms delay between each row
     });
 }
