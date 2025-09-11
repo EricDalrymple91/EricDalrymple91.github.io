@@ -285,7 +285,7 @@ function roll() {
 
 
 function handleOmitChamp(selectElement) {
-    if (document.querySelectorAll(".omitted-champ").length >= 9) {
+    if (document.querySelectorAll(".omitted-champ").length >= 6) {
         showToast('You can only omit six champions. Crazy how you cannot seem to get it.', 'error')
         // Reset dropdown back to "Omit Champion:"
         selectElement.value = "None"
