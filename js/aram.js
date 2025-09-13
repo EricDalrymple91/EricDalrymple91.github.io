@@ -449,14 +449,14 @@ const leagueOfLegendsChampions = [
 // Top 50
 const EricTop50 = [
     "Amumu", "Ashe", "Brand", "Braum", "Caitlyn",
-    "Cho'Gath", "Dr. Mundo", "Gangplank", "Garen", "Gnar",
+    "Cho'Gath", "Darius", "Dr. Mundo", "Gangplank", "Gnar",
     "Gwen", "Illaoi", "Jax", "Kai'Sa", "Kennen",
-    "Lillia", "Malphite", "Maokai", "Milio", "Miss Fortune",
-    "Mordekaiser", "Morgana", "Nasus", "Nautilus", "Neeko",
-    "Olaf", "Ornn", "Pantheon", "Poppy", "Renekton",
-    "Riven", "Rumble", "Seraphine", "Sett", "Sion",
-    "Tahm Kench", "Taric", "Teemo", "Urgot", "Varus",
-    "Vayne", "Veigar", "Vel'Koz", "Volibear", "Xayah",
+    "Kled", "Lillia", "Malphite", "Maokai", "Milio",
+    "Miss Fortune", "Mordekaiser", "Morgana", "Nasus", "Nautilus",
+    "Neeko", "Olaf", "Ornn", "Pantheon", "Poppy",
+    "Renekton", "Riven", "Rumble", "Seraphine", "Sett",
+    "Sion", "Tahm Kench", "Taric", "Teemo", "Urgot",
+    "Varus", "Vayne", "Vel'Koz", "Volibear", "Xayah",
     "Yasuo", "Yone", "Yunara", "Zac", "Zilean",
 ]
 
@@ -476,14 +476,14 @@ const MickeyTop50 = [
 
 const CaitlinTop50 = [
     "Amumu", "Annie", "Ashe", "Brand", "Braum",
-    "Caitlyn", "Cho'Gath", "Dr. Mundo", "Gangplank", "Garen",
+    "Caitlyn", "Cho'Gath", "Darius", "Dr. Mundo", "Gangplank",
     "Gnar", "Gwen", "Illaoi", "Kai'Sa", "Kennen",
-    "Lillia", "Lulu", "Malphite", "Maokai", "Milio",
-    "Miss Fortune", "Morgana", "Nasus", "Nautilus", "Neeko",
-    "Olaf", "Ornn", "Pantheon", "Poppy", "Renekton",
-    "Riven", "Rumble", "Seraphine", "Sett", "Sion",
-    "Tahm Kench", "Taric", "Teemo", "Urgot", "Varus",
-    "Vayne", "Veigar", "Vel'Koz", "Volibear", "Xayah",
+    "Kled", "Lillia", "Lulu", "Malphite", "Maokai",
+    "Milio", "Miss Fortune", "Morgana", "Nasus", "Nautilus",
+    "Neeko", "Olaf", "Ornn", "Pantheon", "Poppy",
+    "Renekton", "Riven", "Rumble", "Seraphine", "Sett",
+    "Sion", "Tahm Kench", "Taric", "Teemo", "Urgot",
+    "Varus", "Vayne", "Vel'Koz", "Volibear", "Xayah",
     "Yasuo", "Yone", "Yunara", "Zac", "Zilean",
 ];
 
@@ -502,14 +502,14 @@ const BenTop50 = [
 
 const PatTop50 = [
     "Amumu", "Ashe", "Brand", "Braum", "Caitlyn",
-    "Cho'Gath", "Dr. Mundo", "Gangplank", "Garen", "Gnar",
+    "Cho'Gath", "Darius", "Dr. Mundo", "Gangplank", "Gnar",
     "Gwen", "Illaoi", "Jax", "Kai'Sa", "Kennen",
-    "Lillia", "Malphite", "Maokai", "Milio", "Miss Fortune",
-    "Mordekaiser", "Morgana", "Nasus", "Nautilus", "Neeko",
-    "Olaf", "Ornn", "Pantheon", "Poppy", "Renekton",
-    "Riven", "Rumble", "Seraphine", "Sett", "Sion",
-    "Tahm Kench", "Taric", "Teemo", "Urgot", "Varus",
-    "Vayne", "Veigar", "Vel'Koz", "Volibear", "Xayah",
+    "Kled", "Lillia", "Malphite", "Maokai", "Milio",
+    "Miss Fortune", "Mordekaiser", "Morgana", "Nasus", "Nautilus",
+    "Neeko", "Olaf", "Ornn", "Pantheon", "Poppy",
+    "Renekton", "Riven", "Rumble", "Seraphine", "Sett",
+    "Sion", "Tahm Kench", "Taric", "Teemo", "Urgot",
+    "Varus", "Vayne", "Vel'Koz", "Volibear", "Xayah",
     "Yasuo", "Yone", "Yunara", "Zac", "Zilean",
 ];
 
