@@ -188,15 +188,6 @@ function roll() {
             tbody.appendChild(row);
 
             if (index === selectedChampPool.length - 1) {
-                // Add copy champs list button
-                // const copyChampsListButton = document.createElement("button");
-                // copyChampsListButton.textContent = "Copy Champion Pool";
-                // copyChampsListButton.classList.add("roll-button");
-                // copyChampsListButton.addEventListener("click", () => {
-                //     copyChampPoolName(selectedChampPool);
-                // });
-                // rollsSection.appendChild(copyChampsListButton);
-
                 // Add the summoner select dropdown
                 const summonerDiv = document.createElement("div");
                 summonerDiv.classList.add("summoner-select");
@@ -359,32 +350,6 @@ function getChampionTop50BySummoner(summoner) {
     }
 }
 
-
-function getChampionPoolBySummoner(summoner) {
-    switch (summoner) {
-        case "Eric":
-            return EricChampions;
-        case "Mickey":
-            return MickeyChampions;
-        case "Caitlin":
-            return CaitlinChampions;
-        case "Ben":
-            return BenChampions;
-        case "Pat":
-            return PatChampions;
-        case "Hogi":
-            return HogiChampions;
-        case "Tori":
-            return ToriChampions;
-        case "David":
-            return DavidChampions;
-        case "Nate":
-            return NateChampions;
-        default:
-            return leagueOfLegendsChampions;
-    }
-}
-
 function getEmoji(summoner) {
     switch (summoner) {
         case "Eric":
@@ -448,16 +413,16 @@ const leagueOfLegendsChampions = [
 
 // Top 50
 const EricTop50 = [
-    "Amumu", "Ashe", "Brand", "Braum", "Caitlyn",
-    "Cho'Gath", "Darius", "Dr. Mundo", "Gangplank", "Gnar",
-    "Gwen", "Illaoi", "Jax", "Kai'Sa", "Kennen",
-    "Kled", "Lillia", "Malphite", "Maokai", "Milio",
-    "Miss Fortune", "Mordekaiser", "Morgana", "Nasus", "Nautilus",
-    "Neeko", "Olaf", "Ornn", "Pantheon", "Poppy",
-    "Renekton", "Riven", "Rumble", "Seraphine", "Sett",
-    "Sion", "Tahm Kench", "Taric", "Teemo", "Urgot",
-    "Varus", "Vayne", "Vel'Koz", "Volibear", "Xayah",
-    "Yasuo", "Yone", "Yunara", "Zac", "Zilean",
+    "Aatrox", "Alistar", "Ambessa", "Aurelion Sol", "Bel'Veth",
+    "Brand", "Briar", "Cho'Gath", "Darius", "Dr. Mundo",
+    "Fiora", "Fizz", "Garen", "Gnar", "Gragas",
+    "Gwen", "Illaoi", "Jax", "Kennen", "Lillia",
+    "Malphite", "Master Yi", "Mordekaiser", "Nasus", "Nocturne",
+    "Olaf", "Ornn", "Quinn", "Renekton", "Rumble",
+    "Sett", "Shen", "Sion", "Skarner", "Tahm Kench",
+    "Thresh", "Trundle", "Tryndamere", "Urgot", "Vayne",
+    "Veigar", "Vel'Koz", "Vex", "Volibear", "Warwick",
+    "Wukong", "Xin Zhao", "Yasuo", "Yorick", "Zac",
 ]
 
 const MickeyTop50 = [
@@ -475,16 +440,16 @@ const MickeyTop50 = [
 
 
 const CaitlinTop50 = [
-    "Amumu", "Annie", "Ashe", "Brand", "Braum",
-    "Caitlyn", "Cho'Gath", "Darius", "Dr. Mundo", "Gangplank",
-    "Gnar", "Gwen", "Illaoi", "Kai'Sa", "Kennen",
-    "Kled", "Lillia", "Lulu", "Malphite", "Maokai",
-    "Milio", "Miss Fortune", "Morgana", "Nasus", "Nautilus",
-    "Neeko", "Olaf", "Ornn", "Pantheon", "Poppy",
-    "Renekton", "Riven", "Rumble", "Seraphine", "Sett",
-    "Sion", "Tahm Kench", "Taric", "Teemo", "Urgot",
-    "Varus", "Vayne", "Vel'Koz", "Volibear", "Xayah",
-    "Yasuo", "Yone", "Yunara", "Zac", "Zilean",
+    "Ahri", "Annie", "Ashe", "Blitzcrank", "Brand",
+    "Caitlyn", "Cho'Gath", "Elise", "Galio", "Graves",
+    "Gwen", "Hecarim", "Irelia", "Kai'Sa", "Karma",
+    "Karthus", "Kha'Zix", "Kindred", "Lillia", "Lulu",
+    "Lux", "Malphite", "Maokai", "Mel", "Milio",
+    "Miss Fortune", "Morgana", "Nautilus", "Neeko", "Pantheon",
+    "Poppy", "Senna", "Seraphine", "Shen", "Sivir",
+    "Smolder", "Tahm Kench", "Taric", "Teemo", "Tristana",
+    "Trundle", "Twisted Fate", "Varus", "Vayne", "Vel'Koz",
+    "Vi", "Volibear", "Warwick", "Xayah", "Zyra",
 ];
 
 const BenTop50 = [
@@ -501,16 +466,16 @@ const BenTop50 = [
 ];
 
 const PatTop50 = [
-    "Amumu", "Ashe", "Brand", "Braum", "Caitlyn",
-    "Cho'Gath", "Darius", "Dr. Mundo", "Gangplank", "Gnar",
-    "Gwen", "Illaoi", "Jax", "Kai'Sa", "Kennen",
-    "Kled", "Lillia", "Malphite", "Maokai", "Milio",
-    "Miss Fortune", "Mordekaiser", "Morgana", "Nasus", "Nautilus",
-    "Neeko", "Olaf", "Ornn", "Pantheon", "Poppy",
-    "Renekton", "Riven", "Rumble", "Seraphine", "Sett",
-    "Sion", "Tahm Kench", "Taric", "Teemo", "Urgot",
-    "Varus", "Vayne", "Vel'Koz", "Volibear", "Xayah",
-    "Yasuo", "Yone", "Yunara", "Zac", "Zilean",
+    "Aatrox", "Akali", "Ambessa", "Amumu", "Aphelios",
+    "Ashe", "Caitlyn", "Camille", "Cassiopeia", "Cho'Gath",
+    "Corki", "Diana", "Dr. Mundo", "Ezreal", "Fiora",
+    "Gangplank", "Garen", "Gnar", "Gragas", "Graves",
+    "Gwen", "Illaoi", "Jarvan IV", "Jax", "Jhin",
+    "K'Sante", "Kai'Sa", "Katarina", "Kayn", "Kled",
+    "Lucian", "Nasus", "Pantheon", "Poppy", "Renekton",
+    "Riven", "Ryze", "Sion", "Tristana", "Tryndamere",
+    "Twitch", "Udyr", "Varus", "Vayne", "Viego",
+    "Vladimir", "Xayah", "Yone", "Yunara", "Zac",
 ];
 
 const HogiTop50 = [
@@ -579,103 +544,14 @@ const DodgerTop50 = [
 ]
 
 const LiamTop50 = [
-    "Ahri", "Anivia", "Blitzcrank", "Brand", "Caitlyn",
-    "Cho'Gath", "Corki", "Ekko", "Ezreal", "Fiddlesticks",
-    "Fizz", "Galio", "Gangplank", "Gnar", "Gragas",
-    "Heimerdinger", "Janna", "Jarvan IV", "Karma", "Kassadin",
-    "Kennen", "Kha'Zix", "LeBlanc", "Leona", "Lissandra",
-    "Lulu", "Lux", "Malphite", "Malzahar", "Maokai",
-    "Mel", "Morgana", "Nami", "Nautilus", "Orianna",
-    "Ornn", "Renata Glasc", "Sejuani", "Sett", "Shaco",
-    "Shen", "Soraka", "Syndra", "Thresh", "Twisted Fate",
-    "Veigar", "Xayah", "Zac", "Zilean", "Zoe",
+    "Akali", "Ambessa", "Brand", "Braum", "Briar",
+    "Caitlyn", "Darius", "Diana", "Ekko", "Ezreal",
+    "Fiddlesticks", "Gnar", "Graves", "Jax", "Jhin",
+    "Jinx", "Kai'Sa", "Kassadin", "Kayle", "Kennen",
+    "Lee Sin", "Lillia", "Lucian", "Master Yi", "Mel",
+    "Morgana", "Olaf", "Orianna", "Ornn", "Pyke",
+    "Renekton", "Senna", "Shen", "Sivir", "Smolder",
+    "Swain", "Sylas", "Tahm Kench", "Tristana", "Twitch",
+    "Vi", "Viego", "Vladimir", "Volibear", "Warwick",
+    "Wukong", "Xayah", "Yasuo", "Yone", "Zed",
 ]
-
-
-// Owned champs
-const EricChampions = leagueOfLegendsChampions.filter(
-    item => ![
-        "Ahri", "Akali", "Akshan", "Alistar", "Ambessa", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "Aurora", "Azir",
-        "Bard", "Blitzcrank", "Braum", "Briar", "Caitlyn", "Camille", "Cassiopeia", "Corki",
-        "Diana", "Draven", "Ekko", "Elise", "Evelynn",
-        "Fiddlesticks", "Fizz", "Galio", "Gangplank", "Graves",
-        "Hecarim", "Heimerdinger", "Hwei", "Irelia", "Ivern",
-        "Janna", "Jarvan IV", "Jayce", "Jhin", "Jinx",
-        "Kai'Sa", "Kalista", "Karma", "Karthus", "Kassadin", "Katarina", "Kayn", "Kennen", "Kha'Zix", "Kindred", "Kled", "Kog'Maw",
-        "LeBlanc", "Lee Sin", "Leona", "Lissandra", "Lucian", "Lulu",
-        "Malzahar", "Maokai", "Master Yi", "Mel", "Milio", "Miss Fortune", "Morgana",
-        "Naafiri", "Nami", "Nautilus", "Neeko", "Nidalee", "Nilah", "Nocturne", "Nunu & Willump",
-        "Orianna", "Ornn", "Pantheon", "Pyke", "Qiyana", "Rakan", "Rammus", "Rek'Sai", "Rell", "Renata Glasc", "Rengar", "Riven", "Ryze",
-        "Samira", "Seraphine", "Shaco", "Shyvana", "Sivir", "Smolder", "Sona", "Soraka", "Swain", "Syndra",
-        "Taliyah", "Talon", "Tristana", "Twitch", "Udyr",
-        "Varus", "Vayne", "Vex", "Vi", "Viego", "Viktor", "Vladimir",
-        "Xayah", "Xin Zhao",
-        "Yasuo", "Yone", "Yorick", "Yuumi",
-        "Zed", "Zeri", "Ziggs", "Zilean", "Zoe", "Zyra"
-    ].includes(item)
-);
-
-const MickeyChampions = leagueOfLegendsChampions.filter(
-    item => ![
-        "Aatrox", "Aurelion Sol", "Azir", "Camille", "Cassiopeia", "Cho'Gath", "Dr. Mundo",
-        "Fiora", "Galio", "Gwen", "Hecarim", "Irelia", "Janna", "Jax", "Jayce", "Karthus",
-        "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Lulu", "Malzahar", "Maokai",
-        "Naafiri", "Olaf", "Ornn", "Pyke", "Qiyana", "Rakan", "Rammus", "Rek'Sai", "Rengar",
-        "Sejuani", "Seraphine", "Shyvana", "Skarner", "Swain", "Taliyah", "Talon", "Tryndamere",
-        "Udyr", "Urgot", "Vel'Koz", "Vex", "Vi", "Vladimir", "Volibear", "Yone", "Yorick",
-        "Yuumi", "Zac"
-    ].includes(item)
-)
-
-const CaitlinChampions = leagueOfLegendsChampions.filter(
-    item => ![
-        "Aatrox", "Ambessa", "Aphelios", "Azir", "Belveth", "Camille", "Cassiopeia",
-        "Diana", "Gnar", "Gragas", "Gwen", "Hwei", "Ivern", "Kalista", "Kayn",
-        "Kennen", "Kled", "Ksante", "Lissandra", "Naafiri", "Nilah", "Nocturne",
-        "Qiyana", "Rell", "Rumble", "Samira", "Sejuani", "Sett", "Shaco", "Shyvana",
-        "Smolder", "Talon", "Urgot", "Wukong", "Yasuo", "Zoe"
-    ].includes(item)
-);
-
-const BenChampions = leagueOfLegendsChampions.filter(
-    item => ![
-    ].includes(item)
-)
-
-const PatChampions = leagueOfLegendsChampions.filter(
-    item => ![
-    ].includes(item)
-)
-
-const HogiChampions = leagueOfLegendsChampions.filter(
-    item => ![
-    ].includes(item)
-)
-
-const ToriChampions = leagueOfLegendsChampions.filter(
-    item => ![
-    ].includes(item)
-)
-
-const DavidChampions = leagueOfLegendsChampions.filter(
-    item => ![
-    ].includes(item)
-)
-
-const NateChampions = leagueOfLegendsChampions.filter(
-    item => ![
-        "Ahri", "Akshan", "Alistar", "Amumu", "Annie", "Aphelios", "Aurelion Sol",
-        "Azir", "Bard", "Bel'Veth", "Briar", "Camille", "Cassiopeia", "Diana", "Elise",
-        "Evelynn", "Fiddlesticks", "Fiora", "Gangplank", "Gnar", "Gragas", "Gwen",
-        "Hecarim", "Heimerdinger", "Irelia", "Ivern", "Janna", "Jarvan IV", "Jax",
-        "Jayce", "Jhin", "K'Sante", "Kai'Sa", "Kalista", "Kassadin", "Kayle", "Kayn",
-        "Kha'Zix", "Kindred", "Kled", "Kog'Maw", "LeBlanc", "Lillia", "Lissandra",
-        "Lucian", "Lulu", "Malzahar", "Maokai", "Milio", "Naafiri", "Nami", "Nasus",
-        "Neeko", "Nilah", "Nocturne", "Nunu & Willump", "Olaf", "Orianna", "Pyke",
-        "Qiyana", "Quinn", "Rakan", "Rammus", "Rek'Sai", "Renata Glasc", "Renekton",
-        "Rengar", "Ryze", "Samira", "Sejuani", "Seraphine", "Shaco", "Shyvana", "Singed",
-        "Skarner", "Swain", "Syndra", "Tahm Kench", "Taliyah", "Talon", "Trundle", "Urgot",
-        "Vex", "Viktor", "Vladimir", "Wukong", "Xayah", "Xin Zhao", "Yasuo", "Yorick",
-        "Yuumi", "Zeri", "Ziggs", "Zilean", "Zyra"
-    ].includes(item)
-)
