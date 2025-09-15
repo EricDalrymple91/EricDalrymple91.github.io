@@ -419,6 +419,7 @@ button:active {
 	display: flex;
 	gap: 20px;
 	justify-content: center;
+	padding-bottom: 30px;
 }
 
 .fade-in {
