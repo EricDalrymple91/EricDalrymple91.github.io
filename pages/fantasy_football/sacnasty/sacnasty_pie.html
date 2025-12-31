@@ -106,25 +106,30 @@
             2nd: Dustin -> 100
             3rd: Eric -> 50
 
+        2025 Results:
+            1st: Eric -> 350
+            2nd: Akhil -> 100
+            3rd: Steve -> 50
+
         */
         const numYearsPaid = 8;
         const totalInputshares = numYearsPaid * 500;
 
         // 2025 shares -> 1.794 @ $278.64
-        // 17.135 shares of VTI at $328.17 As of 6/4/25
+        // 17.135 shares of VTI at $337.85 As of 12/30/25
         const vtiPot = 17.135 * 328.17;
         
         const league = {
             ben: 100,
             dustin: 200,
-            akhil: 450,
+            akhil: 550,
             sear: 350,
-            eric: 100,
+            eric: 450,
             mo: 0,
             jacob: 0,
             guim: 450,
             david: 0,
-            steve: 350
+            steve: 400
         }
         
         const sumValues = obj => Object.values(obj).reduce((a, b) => a + b, 0);
@@ -134,7 +139,6 @@
             return (percentage * vtiPot).toFixed(2)
         }
 
-        
         const chart = {
             type: 'pie',
             data: {
