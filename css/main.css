@@ -24,11 +24,20 @@ body {
 
 .fp-image-box {
 	text-align: center;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.image-box {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 24px;
 }
 
 .fp-image {
-	float: left;
-	padding: 1.2%;
+	display: block;
+	padding: 0;
 }
 
 .fp-image img {
@@ -162,6 +171,12 @@ a {
 	color: #2b5b84;
 }
 
+a:hover,
+a:focus {
+	color: #ffffff;
+	text-decoration: none;
+}
+
 .script-container {
 	box-shadow: 2px 2px 2px black;
 }
@@ -240,6 +255,51 @@ a {
 	font-weight: bold;
 }
 
+.draft-table-wrap {
+	max-width: 760px;
+	margin: 0 auto;
+	margin-bottom: 24px;
+}
+
+.draft-table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.draft-table thead {
+	background: rgba(0, 0, 0, 0.25);
+	color: #ffffff;
+}
+
+.draft-table th,
+.draft-table td {
+	padding: 12px 16px;
+	text-align: left;
+	color: #f3f7fa;
+	font-size: 16px;
+}
+
+.draft-table tbody tr:nth-child(even) {
+	background: rgba(0, 0, 0, 0.12);
+}
+
+.draft-table .draft-bad {
+	color: #ff9b9b;
+	font-weight: 600;
+}
+
+.draft-table .draft-good {
+	color: #a8f0b0;
+	font-weight: 600;
+}
+
+
 /* Sacnasty Pie */
 .sacnasty-pie-div {
 	width: 100%;
@@ -256,12 +316,14 @@ a {
 
 /* Paralaxed */
 .p-wrapper {
-	height: 100%;
+	height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
 	perspective: 10px;
+	perspective-origin: center center;
 	background: none;
 	margin-left: -5px;
+	position: relative;
 }
 
 .p-header {
@@ -269,9 +331,9 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 200vh;
 	transform-style: preserve-3d;
-	z-index: -1;
+	z-index: 0;
 }
 
 .p-title {
@@ -282,19 +344,73 @@ a {
 
 .p-section {
 	font-size: 2rem;
-	padding: 2rem;
+	padding: 4rem 2rem;
 	background-color: #2b5b84;
 	color: white;
 }
 
+.p-section--intro {
+	background-color: #2b5b84;
+}
+
+.p-section--solid {
+	background-color: #244a6a;
+}
+
+.p-section--image {
+	min-height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.p-section--mountain {
+	background-image: url("../images/Mountain.png");
+}
+
+.p-section--trees {
+	background-image: url("../images/Trees.png");
+}
+
+.p-section--bottom {
+	min-height: 100vh;
+}
+
+.p-spacer {
+	height: 1px;
+}
+
+.p-content {
+	max-width: 820px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.p-content--overlay {
+	background: rgba(0, 0, 0, 0.45);
+	padding: 2rem 2.5rem;
+	border-radius: 8px;
+}
+
+.p-subtitle {
+	font-family: 'Roboto', sans-serif;
+	font-size: 40px;
+	text-shadow: 2px 2px black;
+	margin-top: 0;
+}
+
 .p-background {
 	transform: translateZ(-10px) scale(2);
+	z-index: -2;
 }
 
 .p-foreground {
-	transform: translateZ(-5px) scale(1.5);
-	height: 100px;
-	width: 100px;
+	transform: translate3d(0, 35vh, -5px) scale(1.5);
+	z-index: -1;
 }
 
 .p-foreground-d {}
@@ -305,7 +421,6 @@ a {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-	z-index: -1;
 }
 
 .link-header {
@@ -315,6 +430,75 @@ a {
 .link-header:hover {
 	color: whitesmoke;
 	cursor: pointer;
+}
+
+/* Fantasy Football Links */
+.ff-page {
+	min-height: 100vh;
+	padding: 110px 20px 60px;
+	background: radial-gradient(circle at top, #214d6b, #18354a 55%, #101d28);
+}
+
+.ff-hero {
+	text-align: center;
+	margin-bottom: 36px;
+}
+
+.ff-kicker {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #b9d6ea;
+	margin-bottom: 8px;
+}
+
+.ff-title {
+	font-size: 48px;
+	margin: 0 0 10px;
+	color: #ffffff;
+	text-shadow: 2px 2px black;
+}
+
+.ff-subtitle {
+	color: #d7e6f0;
+	font-size: 18px;
+	margin: 0;
+}
+
+.ff-grid {
+	display: grid;
+	gap: 18px;
+	max-width: 860px;
+	margin: 0 auto;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.ff-card {
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 12px;
+	padding: 22px 20px;
+	color: #ffffff;
+	text-decoration: none;
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ff-card:hover {
+	transform: translateY(-4px);
+	border-color: rgba(255, 255, 255, 0.35);
+	box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
+}
+
+.ff-card__title {
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.ff-card__meta {
+	font-size: 14px;
+	color: #c8d7e2;
 }
 
 

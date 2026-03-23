@@ -30,34 +30,10 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
-				<li class="active"><a href="../../about.html">About Me <span class="sr-only">(current)</span><span class="glyphicon glyphicon-user"></span></a></li>
-				<li><a href="../../pythontips.html">Python Tips <span class="glyphicon glyphicon-sunglasses"></span></a></li>
-				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
-				  <ul class="dropdown-menu">
-                    <!-- Fantasy Football -->
-                    <li><a href="../league_links.html">Fantasy Football</a></li>
-                    <!-- Aram Tourney -->
-                    <li role="separator" class="divider"></li>
-                    <li><a href="../../aram_tourney.html">Aram Tourney</a></li>
-					<!-- Paralaxed -->
-					<li role="separator" class="divider"></li>
-					<li><a href="../../paralaxed.html">Paralaxed</a></li>
-	<!--				&lt;!&ndash; Oregon Tech &ndash;&gt;-->
-	<!--				<li><a href="http://oregontech.maps.arcgis.com/home/index.html" target="_blank">ArcGIS Online</a></li>-->
-	<!--				&lt;!&ndash; DuoLingo &ndash;&gt;-->
-	<!--				<li role="separator" class="divider"></li>-->
-	<!--				<li><a href="https://www.duolingo.com/edalrymple" target="_blank">Duolingo</a></li>-->
-	<!--				&lt;!&ndash; Code &ndash;&gt;-->
-	<!--				<li role="separator" class="divider"></li>-->
-	<!--				<li><a href="https://www.codecademy.com/TheMadTitan91" target="_blank">Code Academy</a></li>-->
-	<!--				<li><a href="http://stackoverflow.com/users/6124714/ejd91" target="_blank">Stack Overflow</a></li>-->
-				  </ul>
-				</li>
+				<li><a href="../league_links.html">Fantasy Football</a></li>
+				<li><a href="../../aram_tourney.html">Aram Tourney</a></li>
 			  </ul>
-			  <ul class="nav navbar-nav navbar-right">
-				<li><a href="../../contact.html">Contact Me <span class="glyphicon glyphicon-send"></span></a></li>
-			  </ul>
+			  <ul class="nav navbar-nav navbar-right"></ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
@@ -67,18 +43,55 @@
 
             <!-- Info pane-->
             <h5>Lottery Teams:</h5>
-            <div style="margin: auto; text-align: center">
-                <p style="color: white; display: inline-block">Mo (1000 balls): <span style="color: navajowhite"><span style="color: lightcoral">3-12</span>, Max PF <span style="color: lightcoral">1690.84</span></span></p>
-                <br>
-                <p style="color: white; display: inline-block">Ben (729 balls): <span style="color: navajowhite">4-11, Max PF 1699.16</span></p>
-                <br>
-                <p style="color: white; display: inline-block">Weams (512 balls): <span style="color: navajowhite"><span style="color: lightcoral">3-12</span>, Max PF 1934.86</span></p>
-                <br>
-                <p style="color: white; display: inline-block">David (343 balls): <span style="color: navajowhite">6-9, Max PF 1998.06</span></p>
-                <br>
-                <p style="color: white; display: inline-block">Dustin (216 balls): <span style="color: navajowhite"><span style="color: lightgreen">8-7</span>, Max PF 1999.96</span></p>
-                <br>
-                <p style="color: white; display: inline-block">Guim (125 balls): <span style="color: navajowhite"><span style="color: lightgreen">8-7</span>, Max PF <span style="color: lightgreen">2049.08</span></span></p>
+            <div class="draft-table-wrap">
+                <table class="draft-table">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Balls</th>
+                            <th>Record</th>
+                            <th>Max PF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mo</td>
+                            <td>1000</td>
+                            <td class="draft-bad">3-12</td>
+                            <td class="draft-bad">1690.84</td>
+                        </tr>
+                        <tr>
+                            <td>Ben</td>
+                            <td>729</td>
+                            <td>4-11</td>
+                            <td>1699.16</td>
+                        </tr>
+                        <tr>
+                            <td>Weams</td>
+                            <td>512</td>
+                            <td class="draft-bad">3-12</td>
+                            <td>1934.86</td>
+                        </tr>
+                        <tr>
+                            <td>David</td>
+                            <td>343</td>
+                            <td>6-9</td>
+                            <td>1998.06</td>
+                        </tr>
+                        <tr>
+                            <td>Dustin</td>
+                            <td>216</td>
+                            <td class="draft-good">8-7</td>
+                            <td>1999.96</td>
+                        </tr>
+                        <tr>
+                            <td>Guim</td>
+                            <td>125</td>
+                            <td class="draft-good">8-7</td>
+                            <td class="draft-good">2049.08</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Simulate Balls -->
